@@ -1,0 +1,7 @@
+settings_db.inc
+*.sublime-*
+prepros.cfg
+*~
+__*
+._*
+
