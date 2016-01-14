@@ -24,7 +24,8 @@ alias update='sudo apt-get update && sudo apt-get upgrade -y'
 alias ack='ack-grep'
 alias xclip='xclip -se clipboard'
 alias bc='bc -l'
-#lias clipsum='lipsum | tee /dev/tty | xclip'
+alias clipsum='lipsum | tee /dev/tty | xclip'
+alias isodate='date +%F-%H%M'
 alias pgrep='pgrep -a'
 
 function clipsum () {
