@@ -34,7 +34,7 @@ function clipsum () {
 
 
 #PS1='\[\e[1;32m\][\u@\h \W] \[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] '
-[ -n "$PS1" ] && source ~/.bash_prompt
+#[ -n "$PS1" ] && source ~/.bash_prompt
 
 if [ -f /etc/bash_completion ] ; then
 	. /etc/bash_completion
@@ -92,13 +92,14 @@ export GTK_IM_MODULE="xim"
 export PATH=~/pebble-dev/PebbleSDK-2.8.1/bin:$PATH
 export PEBBLE_PHONE="192.168.2.162"
 
-
 export TERM=xterm-256color
 
+# Powerline shell (https://github.com/milkbikis/powerline-shell)
 function _update_ps1() {
-	PS1="$(~/bin/powerline/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+	PS1="$(~/powerline-shell.py --mode patched $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ]; then
 	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+
