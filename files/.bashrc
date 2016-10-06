@@ -8,15 +8,14 @@
 #	source /etc/bash_completion.d/git
 #fi
 
+set -o vi
 
 # Aliases
+alias ls='ls -t'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias cd..='cd ..'
-alias td='todo.sh -d /home/hannenz/bin/todo.txt/todo.cfg'
-alias tl='todo.sh ls'
-alias ta='todo.sh add'
 alias grep='grep --color=auto'
 alias watch='watch --interval=1'
 alias mount='mount| column -t'
