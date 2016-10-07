@@ -4,14 +4,24 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-#if [ -f /etc/bash_completion.d/git ] ; then
-#	source /etc/bash_completion.d/git
-#fi
+
+# Set PATH
+PATH="$PATH:/home/hannenz/bin:/home/hannenz/.local/bin"
+
+# Load bash completion
+if [ -f /etc/bash_completion ] ; then
+	. /etc/bash_completion
+fi
 
 # Bashmarks (https://github.com/huyng/bashmarks)
 source ${HOME}/.local/bin/bashmarks.sh
 
+# Set VI mode
 set -o vi
+
+export EDITOR="vim"
+export GTK_IM_MODULE="xim"
+export TERM=xterm-256color
 
 # Aliases
 alias ls='ls -t'
@@ -32,10 +42,7 @@ alias pgrep='pgrep -a'
 alias mysql='mysql -u root -ppebble'
 alias mysqldump='mysqldump -u root -ppebble'
 
-#function pwgen () {
-#    pwgen -B -N 1 $* | tee /dev/tty | xclip
-#}
-
+# Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
     if [ $# -ne 1 ] ; then
         echo "usage: mksqldump table"
@@ -46,20 +53,10 @@ function mksqldump () {
     echo "Dump has been written to ${dumpfile}"
 }
 
-
+# Lorem ipsum text to clipboard
 function clipsum () {
 	lipsum "$@" | tee /dev/tty | xclip
 }
-
-
-#PS1='\[\e[1;32m\][\u@\h \W] \[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] '
-#[ -n "$PS1" ] && source ~/.bash_prompt
-
-if [ -f /etc/bash_completion ] ; then
-	. /etc/bash_completion
-fi
-
-PATH="$PATH:/home/hannenz/bin:/home/hannenz/bin/adt-bundle/sdk/platform-tools:/home/hannenz/bin/todo.txt:/home/hannenz/.local/bin"
 
 # Find files/dirs by name
 function fname () {
@@ -81,7 +78,6 @@ smartresize() {
     mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
 }
 
-export EDITOR="vim"
 
 
 # CD in a HALMA Job directory by Job ID
@@ -103,9 +99,6 @@ function pcd {
 	fi
 }
 
-export GTK_IM_MODULE="xim"
-
-export TERM=xterm-256color
 
 # POWERLINE Shell
 function _update_ps1() {
@@ -131,3 +124,4 @@ timed_complete() {
 complete -F timed_complete -o dirnames timed
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
