@@ -24,7 +24,7 @@ export GTK_IM_MODULE="xim"
 export TERM=xterm-256color
 
 # Aliases
-alias ls='ls -t'
+#alias ls='ls -t'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
