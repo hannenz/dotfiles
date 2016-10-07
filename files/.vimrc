@@ -27,7 +27,7 @@ set cursorline            " highlight current line
 hi CursorLine cterm=NONE ctermbg=234 ctermfg=NONE
 
 "NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeToggle<CR>
 " Close vim if only NERDTree is remainig
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
