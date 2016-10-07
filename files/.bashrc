@@ -11,14 +11,14 @@
 # Bashmarks (https://github.com/huyng/bashmarks)
 source ${HOME}/.local/bin/bashmarks.sh
 
+set -o vi
+
 # Aliases
-alias ls='ls -t --color=auto'
+alias ls='ls -t'
+alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias cd..='cd ..'
-alias td='todo.sh -d /home/hannenz/bin/todo.txt/todo.cfg'
-alias tl='todo.sh ls'
-alias ta='todo.sh add'
 alias grep='grep --color=auto'
 alias watch='watch --interval=1'
 alias mount='mount| column -t'
@@ -78,13 +78,10 @@ function grif () {
 
 # »Save for web«-like image resize with imagemagick
 smartresize() {
-   mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+    mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
 }
 
-#export GIT_PS1_SHOWDIRTYSTATE=0
-#export GIT_PS1_SHOWUNTRACKEDFILES=0
 export EDITOR="vim"
-#export TODOTXT_DEFAULT_ACTION=ls
 
 
 # CD in a HALMA Job directory by Job ID
@@ -121,23 +118,7 @@ if [ "$TERM" != "linux" ]; then
 	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-# Start tmux by default
-#if command -v tmux>/dev/null; then
-#    [[ ! $TERM =~ screen ]] && [ -x $TMUX ] && exec tmux
-#fi
-
 eval $(thefuck --alias)
-
-# add this configuration to ~/.bashrc
-#export HH_CONFIG=hicolor         # get more colors
-#shopt -s histappend              # append new history items to .bash_history
-#export HISTCONTROL=ignorespace   # leading space hides commands from history
-#export HISTFILESIZE=10000        # increase history file size (default is 500)
-#export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-#export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
-# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
-#if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
-
 
 shopt -s progcomp                                                               
 timed_complete() {                                                              
