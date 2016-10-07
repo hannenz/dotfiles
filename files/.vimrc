@@ -19,7 +19,7 @@ set tabstop=4             " tab spacing
 set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
-set expandtab             " use spaces instead of tabs
+"set expandtab             " use spaces instead of tabs
 set smarttab              " use tabs at the start of a line, spaces elsewhere
 set nowrap                " don't wrap text
 
@@ -27,9 +27,9 @@ set cursorline            " highlight current line
 hi CursorLine cterm=NONE ctermbg=234 ctermfg=NONE
 
 "NERDTree
-map <C-m> :NERDTreeToggle<CR>
+map <C-v> :NERDTreeToggle<CR>
 " Close vim if only NERDTree is remainig
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
