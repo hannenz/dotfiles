@@ -18,6 +18,7 @@ source ${HOME}/.local/bin/bashmarks.sh
 
 # Set VI mode
 set -o vi
+bind -m vi-command ".":insert-last-argument
 
 export EDITOR="vim"
 export GTK_IM_MODULE="xim"
@@ -41,6 +42,7 @@ alias isodate='date +%F-%H%M'
 alias pgrep='pgrep -a'
 alias mysql='mysql -u root -ppebble'
 alias mysqldump='mysqldump -u root -ppebble'
+alias news='newsbeuter'
 
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
