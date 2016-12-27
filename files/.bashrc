@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Set PATH
-PATH="$PATH:/home/hannenz/bin:/home/hannenz/.local/bin"
+PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin"
 
 # Load bash completion
 if [ -f /etc/bash_completion ] ; then
@@ -126,4 +126,21 @@ timed_complete() {
 complete -F timed_complete -o dirnames timed
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+function plankctl() {
+	case $1 in 
+		"on")
+			gsettings set org.pantheon.desktop.cerbere monitored-processes "['wingpanel', 'plank']"
+			;;
+
+		"off")
+			gsettings set org.pantheon.desktop.cerbere monitored-processes "['wingpanel']"
+			killall plank
+			;;
+
+		*)
+			echo "pankctl on|off"
+			;;
+	esac
+}
 
