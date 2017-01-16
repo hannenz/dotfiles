@@ -171,3 +171,21 @@ EOT
 
 	diff "$tmp_file" "$local_file"
 }
+
+function plankctl() {
+	case $1 in 
+		"on")
+			gsettings set org.pantheon.desktop.cerbere monitored-processes "['wingpanel', 'plank']"
+			;;
+
+		"off")
+			gsettings set org.pantheon.desktop.cerbere monitored-processes "['wingpanel']"
+			killall plank
+			;;
+
+		*)
+			echo "pankctl on|off"
+			;;
+	esac
+}
+
