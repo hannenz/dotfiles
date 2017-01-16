@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Set PATH
-PATH="$PATH:/home/hannenz/bin:/home/hannenz/.local/bin"
+PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin"
 
 # Load bash completion
 if [ -f /etc/bash_completion ] ; then
@@ -47,7 +47,7 @@ alias news='newsbeuter'
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
     if [ $# -ne 1 ] ; then
-        echo "usage: mksqldump table"
+        echo "usage: mksqldump database"
         return
     fi
     dumpfile=/tmp/$1.$(hostname).$(date +%F-%H%M%S).sql.gz
@@ -76,7 +76,7 @@ function grif () {
 }
 
 # »Save for web«-like image resize with imagemagick
-smartresize() {
+function smartresize() {
     mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
 }
 
@@ -127,3 +127,47 @@ complete -F timed_complete -o dirnames timed
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+# Screenfetch only if in certain Terminator terminal
+# if [[ $TERMINATOR_UUID = "urn:uuid:707249f9-d685-4330-95b3-016e1427c143" ]] ; then
+#	screenfetch
+# fi
+
+function tea {
+	if ! [[ $1 =~ ^[0-9]+$ ]] ; then
+		echo "Give time in minutes"
+		return -1;
+	fi
+	echo "notify-send \"Tea Time!\"" | at now + $1 minutes
+	return 0;
+}
+
+
+#
+# Tab completion for hosts in .netrc (ftp hosts)
+#
+function netrc_completion {
+	for match in $(grep "machine.*${COMP_WORDS[$COMP_CWORD]}.*$" ${HOME}/.netrc | cut -d" " -f 2) ; do
+		COMPREPLY=(${COMPREPLY[@]} "${match}")
+	done
+}
+complete -F netrc_completion ftp
+
+#
+# Diff files over FTP
+#
+# USAGE: ftpdiff host remote_file local_file
+#
+function ftpdiff {
+	ftp_hostname=$1
+	remote_file=$2
+	local_file=$3
+	tmp_file=$(tempfile)
+
+	ftp -n "$ftp_hostname" <<EOT 
+	user "$ftp_user" "$ftp_password"
+	get "$remote_file" "$tmp_file"
+	quit
+EOT
+
+	diff "$tmp_file" "$local_file"
+}
