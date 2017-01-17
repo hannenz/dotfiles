@@ -188,3 +188,5 @@ function plankctl() {
 	esac
 }
 
+alias translate="dict -d fd-deu-eng" 
+
