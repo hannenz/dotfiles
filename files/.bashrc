@@ -150,7 +150,7 @@ function netrc_completion {
 		COMPREPLY=(${COMPREPLY[@]} "${match}")
 	done
 }
-complete -F netrc_completion ftp
+complete -F netrc_completion ftp ftpdiff
 
 #
 # Diff files over FTP
@@ -163,8 +163,7 @@ function ftpdiff {
 	local_file=$3
 	tmp_file=$(tempfile)
 
-	ftp -n "$ftp_hostname" <<EOT 
-	user "$ftp_user" "$ftp_password"
+	ftp "$ftp_hostname" <<EOT 
 	get "$remote_file" "$tmp_file"
 	quit
 EOT
