@@ -115,16 +115,6 @@ fi
 
 eval $(thefuck --alias)
 
-shopt -s progcomp                                                               
-timed_complete() {                                                              
-    local partial                                                                 
-    COMPREPLY=()                                                                  
-    partial=${COMP_WORDS[COMP_CWORD]}                                             
-    COMPREPLY=($(compgen -W '$( timed projects )' -- $partial))                   
-    return 0                                                                      
-}                                           
-complete -F timed_complete -o dirnames timed
-
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # Screenfetch only if in certain Terminator terminal
@@ -188,5 +178,7 @@ function plankctl() {
 	esac
 }
 
+# Don't record duplicates in history
 alias translate="dict -d fd-deu-eng" 
 
+export HISTCONTROL=ignoreboth:erasedups
