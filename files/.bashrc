@@ -22,7 +22,10 @@ bind -m vi-command ".":insert-last-argument
 
 export EDITOR="vim"
 export GTK_IM_MODULE="xim"
-export TERM=xterm-256color
+#export TERM=xterm-256color
+export TERM=screen-256color
+
+export MANPAGER=most
 
 # Aliases
 #alias ls='ls -t'
