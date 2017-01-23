@@ -25,8 +25,8 @@ export GTK_IM_MODULE="xim"
 #export TERM=xterm-256color
 export TERM=screen-256color
 
+# Colored Manpages
 export MANPAGER=less
-
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
 export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
 export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
