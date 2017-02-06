@@ -23,7 +23,8 @@ bind -m vi-command ".":insert-last-argument
 export EDITOR="vim"
 export GTK_IM_MODULE="xim"
 #export TERM=xterm-256color
-export TERM=screen-256color
+#export TERM=screen-256color
+
 
 # Colored Manpages
 export MANPAGER=less
@@ -189,7 +190,14 @@ function plankctl() {
 	esac
 }
 
-# Don't record duplicates in history
 alias translate="dict -d fd-deu-eng" 
 
+# Don't record duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
+
+# Start tmux
+if [[ "$TERM" != "screen-256color" ]]
+then
+	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+fi
+
