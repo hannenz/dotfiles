@@ -22,9 +22,6 @@ bind -m vi-command ".":insert-last-argument
 
 export EDITOR="vim"
 export GTK_IM_MODULE="xim"
-#export TERM=xterm-256color
-#export TERM=screen-256color
-
 
 # Colored Manpages
 export MANPAGER=less
@@ -115,9 +112,10 @@ function pcd {
 
 
 # POWERLINE Shell
+pw=/usr/share/powerline/bindings/bash/powerline.sh
 function _update_ps1() {
-    if [ -f ${HOME}/bin/powerline/powerline-shell/powerline-shell.py ] ; then
-    	PS1="$(${HOME}/bin/powerline/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+    if [ -f $pw ] ; then
+		source $pw
     fi
 }
 
