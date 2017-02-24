@@ -37,7 +37,7 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 #alias ls='ls -t'
 alias ls='ls --color=auto'
 alias ll='ls -l'
-alias la='ls -a'
+alias la='ls -lart'
 alias cd..='cd ..'
 alias grep='grep --color=auto'
 alias watch='watch --interval=1'
@@ -112,16 +112,15 @@ function pcd {
 
 
 # POWERLINE Shell
-pw=/usr/share/powerline/bindings/bash/powerline.sh
-function _update_ps1() {
-    if [ -f $pw ] ; then
-		source $pw
-    fi
-}
+# pw=/usr/share/powerline/bindings/bash/powerline.sh
+# function _update_ps1() {
+#     if [ -f $pw ] ; then
+# 		source $pw
+#     fi
+# }
 
-if [ "$TERM" != "linux" ]; then
-	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+. ${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
 
 eval $(thefuck --alias)
 
