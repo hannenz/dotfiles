@@ -112,7 +112,8 @@ function pcd {
 
 
 # POWERLINE Shell
-pw=/usr/share/powerline/bindings/bash/powerline.sh
+# pw=/usr/share/powerline/bindings/bash/powerline.sh
+pw=/usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 function _update_ps1() {
     if [ -f $pw ] ; then
 		source $pw
