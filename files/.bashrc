@@ -53,6 +53,8 @@ alias mysql='mysql -u root -ppebble'
 alias mysqldump='mysqldump -u root -ppebble'
 alias news='newsbeuter'
 
+alias shrug='echo "¯\_(ツ)_/¯" | xclip -se clipboard'
+
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
     if [ $# -ne 1 ] ; then
@@ -119,7 +121,8 @@ function pcd {
 #     fi
 # }
 
-. ${HOME}/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+
 
 
 eval $(thefuck --alias)
