@@ -125,13 +125,6 @@ function pcd {
 
 
 # POWERLINE Shell
-# pw=/usr/share/powerline/bindings/bash/powerline.sh
-# function _update_ps1() {
-#     if [ -f $pw ] ; then
-# 		source $pw
-#     fi
-# }
-
 . /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 
 
@@ -206,9 +199,13 @@ alias translate="dict -d fd-deu-eng"
 # Don't record duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
 
-# Start tmux
-if [[ ! "$TERM" =~ "screen" ]]
-then
-	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# Start tmux (https://unix.stackexchange.com/a/113768)
+if command -v tmux >/dev/null; then
+	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 
+# if [[ "$TERM" != "screen-256color" ]]
+# then
+# 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# fi
+#
