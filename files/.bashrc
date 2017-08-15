@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Set PATH
-PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin"
+PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin:/home/hannenz/.local/bin/phpctags/bin"
 
 # Load bash completion
 if [ -f /etc/bash_completion ] ; then
@@ -52,18 +52,29 @@ alias pgrep='pgrep -a'
 alias mysql='mysql -u root -ppebble'
 alias mysqldump='mysqldump -u root -ppebble'
 alias news='newsbeuter'
+alias gc='git commit -m'
+alias ga='git add .'
+alias gs='git status'
+alias gd='git diff'
+alias gpsh='git push'
+alias gpll='git pull'
+alias log='tail -f /var/log/apache2/error.log'
+alias clr='clear'
 
 alias shrug='echo "¯\_(ツ)_/¯" | xclip -se clipboard'
 
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
-    if [ $# -ne 1 ] ; then
-        echo "usage: mksqldump database"
+    if [ $# -lt 1 ] ; then
+        echo "usage: mksqldump database [email-address]"
         return
     fi
     dumpfile=/tmp/$1.$(hostname).$(date +%F-%H%M%S).sql.gz
     mysqldump -u root -ppebble $1 | gzip > "${dumpfile}"
     echo "Dump has been written to ${dumpfile}"
+	if [ $# -eq 2 ] ; then
+		thunderbird --compose "to=$2,subject=SQL-Dump `basename ${dumpfile}`,attachment=${dumpfile},format=text"
+	fi
 }
 
 # Lorem ipsum text to clipboard
@@ -196,7 +207,7 @@ alias translate="dict -d fd-deu-eng"
 export HISTCONTROL=ignoreboth:erasedups
 
 # Start tmux
-if [[ "$TERM" != "screen-256color" ]]
+if [[ ! "$TERM" =~ "screen" ]]
 then
 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
 fi
