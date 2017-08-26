@@ -21,6 +21,7 @@ set -o vi
 bind -m vi-command ".":insert-last-argument
 
 export EDITOR="vim"
+export FCEDIT="vim"
 export GTK_IM_MODULE="xim"
 
 # Colored Manpages
@@ -53,7 +54,7 @@ alias mysql='mysql -u root -ppebble'
 alias mysqldump='mysqldump -u root -ppebble'
 alias news='newsbeuter'
 
-alias shrug='echo "¯\_(ツ)_/¯" | xclip -se clipboard'
+alias shrug='echo "¯\_(ツ)_/¯"'
 
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
@@ -104,30 +105,9 @@ function jcd  {
 }
 
 
-#cd in a project dir by project name
-function pcd {
-	dir=$(find ${HOME}/smbtom/htdocs -maxdepth 1 -type d -iname "*${1}*" -print -quit)
-	if [ -d ${dir} ] ; then
-		cd ${dir}
-	fi
-}
-
-
-# POWERLINE Shell
-# pw=/usr/share/powerline/bindings/bash/powerline.sh
-# function _update_ps1() {
-#     if [ -f $pw ] ; then
-# 		source $pw
-#     fi
-# }
-
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
-
-
-
-eval $(thefuck --alias)
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
 
 # Screenfetch only if in certain Terminator terminal
 # if [[ $TERMINATOR_UUID = "urn:uuid:707249f9-d685-4330-95b3-016e1427c143" ]] ; then
