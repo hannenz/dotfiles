@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Set PATH
-PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin"
+PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin:/home/hannenz/.local/bin/phpctags/bin"
 
 # Load bash completion
 if [ -f /etc/bash_completion ] ; then
@@ -53,18 +53,29 @@ alias pgrep='pgrep -a'
 alias mysql='mysql -u root -ppebble'
 alias mysqldump='mysqldump -u root -ppebble'
 alias news='newsbeuter'
+alias gc='git commit -m'
+alias ga='git add .'
+alias gs='git status'
+alias gd='git diff'
+alias gpsh='git push'
+alias gpll='git pull'
+alias log='tail -f /var/log/apache2/error.log'
+alias clr='clear'
 
 alias shrug='echo "¯\_(ツ)_/¯"'
 
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
-    if [ $# -ne 1 ] ; then
-        echo "usage: mksqldump database"
+    if [ $# -lt 1 ] ; then
+        echo "usage: mksqldump database [email-address]"
         return
     fi
     dumpfile=/tmp/$1.$(hostname).$(date +%F-%H%M%S).sql.gz
     mysqldump -u root -ppebble $1 | gzip > "${dumpfile}"
     echo "Dump has been written to ${dumpfile}"
+	if [ $# -eq 2 ] ; then
+		thunderbird --compose "to=$2,subject=SQL-Dump `basename ${dumpfile}`,attachment=${dumpfile},format=text"
+	fi
 }
 
 # Lorem ipsum text to clipboard
@@ -103,6 +114,11 @@ function jcd  {
                 cd ${dir}
         fi
 }
+
+
+
+# POWERLINE Shell
+. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 
 
 
@@ -175,9 +191,13 @@ alias translate="dict -d fd-deu-eng"
 # Don't record duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
 
-# Start tmux
-if [[ "$TERM" != "screen-256color" ]]
-then
-	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# Start tmux (https://unix.stackexchange.com/a/113768)
+if command -v tmux >/dev/null; then
+	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 
+# if [[ "$TERM" != "screen-256color" ]]
+# then
+# 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# fi
+#
