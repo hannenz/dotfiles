@@ -196,3 +196,8 @@ export HISTCONTROL=ignoreboth:erasedups
 # 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 # fi
 
+# if [[ "$TERM" != "screen-256color" ]]
+# then
+# 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# fi
+
