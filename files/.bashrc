@@ -192,12 +192,7 @@ alias translate="dict -d fd-deu-eng"
 export HISTCONTROL=ignoreboth:erasedups
 
 # # Start tmux (https://unix.stackexchange.com/a/113768)
-if command -v tmux >/dev/null; then
-	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
-# if [[ "$TERM" != "screen-256color" ]]
-# then
-# 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+# if command -v tmux >/dev/null; then
+# 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 # fi
-#
+
