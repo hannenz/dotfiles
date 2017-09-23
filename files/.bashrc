@@ -186,6 +186,11 @@ function plankctl() {
 	esac
 }
 
+function mkwritable () {
+	sudo chown -R hannenz:www-data $1
+	chmod -R g+w $1
+}
+
 alias translate="dict -d fd-deu-eng" 
 
 # Don't record duplicates in history
