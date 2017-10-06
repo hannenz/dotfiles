@@ -36,34 +36,6 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 
 # Aliases
 source ~/.bash_aliases
-#alias ls='ls -t'
-# alias ls='ls --color=auto'
-# alias ll='ls -l'
-# alias la='ls -lart'
-# alias cd..='cd ..'
-# alias grep='grep --color=auto'
-# alias watch='watch --interval=1'
-# alias mount='mount| column -t'
-# alias update='sudo apt-get update && sudo apt-get upgrade -y'
-# alias ack='ack-grep'
-# alias xclip='xclip -se clipboard'
-# alias bc='bc -l'
-# alias clipsum='lipsum | tee /dev/tty | xclip'
-# alias isodate='date +%F-%H%M'
-# alias pgrep='pgrep -a'
-# alias mysql='mysql -u root -ppebble'
-# alias mysqldump='mysqldump -u root -ppebble'
-# alias news='newsbeuter'
-# alias gc='git commit -m'
-# alias ga='git add .'
-# alias gs='git status'
-# alias gd='git diff'
-# alias gpsh='git push'
-# alias gpll='git pull'
-# alias log='tail -f /var/log/apache2/error.log'
-# alias clr='clear'
-#
-# alias shrug='echo "¯\_(ツ)_/¯"'
 
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
@@ -119,7 +91,9 @@ function jcd  {
 
 
 # POWERLINE Shell
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+if [ -e /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ] ; then
+	. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+fi
 
 
 
