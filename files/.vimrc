@@ -18,6 +18,7 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'tomtom/tcomment_vim'
+Plug 'ajh17/vimcompletesme'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -133,3 +134,4 @@ set switchbuf+=usetab,newtab
 
 au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 
+nnoremap <leader>m :make<CR>
