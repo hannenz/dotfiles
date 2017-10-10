@@ -134,4 +134,4 @@ set switchbuf+=usetab,newtab
 
 au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 
-nnoremap <leader>m :make<CR>
+nnoremap <leader>m :!make<CR>
