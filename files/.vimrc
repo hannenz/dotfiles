@@ -73,6 +73,10 @@ set cursorline            " highlight current line
 
 set splitright
 set splitbelow
+ 
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " ok, sometimes, it's just useful...
 set mouse=a
@@ -135,3 +139,8 @@ set switchbuf+=usetab,newtab
 au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 
 nnoremap <leader>m :!make<CR>
+
+let g:UltiSnipsExpandTrigger = '<f5>'
+set autoindent
+
+
