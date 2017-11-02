@@ -73,6 +73,10 @@ set cursorline            " highlight current line
 
 set splitright
 set splitbelow
+ 
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
@@ -142,8 +146,11 @@ set switchbuf+=usetab,newtab
 au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Expl<CR>
+nnoremap <leader>m :!make<CR>
+
+iabbrev </ </<C-X><C-O>
 
 let g:UltiSnipsExpandTrigger = '<f5>'
-iabbrev </ </<C-X><C-O>
+set autoindent
 
 
