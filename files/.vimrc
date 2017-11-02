@@ -18,6 +18,7 @@ Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'tomtom/tcomment_vim'
+Plug 'ajh17/vimcompletesme'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -73,6 +74,10 @@ set cursorline            " highlight current line
 set splitright
 set splitbelow
 
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 " ok, sometimes, it's just useful...
 set mouse=a
 
@@ -118,10 +123,13 @@ set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
 " Allow more results in CtrlP
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:20'
 " Make CtrlP open in new tab by default
-let g:ctrlp_prompt_mappings = {
-	\'AcceptSelection("e")': ['<c-t>'],
-	\'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>']
-	\}
+" let g:ctrlp_prompt_mappin
+" 	\'AcceptSelection("e")': ['<c-t>'],
+" 	\'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>']
+" 	\}
+
+
+
 " Dont descend in submodules
 let g:ctrlp_working_path_mode = 'rw'
 
@@ -133,4 +141,9 @@ set switchbuf+=usetab,newtab
 
 au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 nnoremap <Leader>g :Gstatus<CR>
+nnoremap <Leader>e :Expl<CR>
+
+let g:UltiSnipsExpandTrigger = '<f5>'
+iabbrev </ </<C-X><C-O>
+
 
