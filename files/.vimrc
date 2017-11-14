@@ -12,7 +12,9 @@ Plug 'plasticboy/vim-markdown'
 
 " Plugins
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/Tabmerge'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -147,6 +149,10 @@ au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
+
+" fzf shortcuts
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>l :Lines<CR>
 
 iabbrev </ </<C-X><C-O>
 

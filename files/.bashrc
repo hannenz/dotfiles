@@ -188,3 +188,6 @@ export HISTCONTROL=ignoreboth:erasedups
 # 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
 # fi
 
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
