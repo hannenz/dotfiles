@@ -147,6 +147,7 @@ au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
+nnoremap <Leader>l :ls<CR>
 
 iabbrev </ </<C-X><C-O>
 
