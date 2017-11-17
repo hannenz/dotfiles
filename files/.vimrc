@@ -143,7 +143,7 @@ let g:ctrlp_working_path_mode = 'rw'
 au BufRead,BufNewFile *.scss set filetype=sass
 
 " Open entries of quick fix list in new tab
-set switchbuf+=usetab,newtab
+" set switchbuf+=usetab,newtab
 
 au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
 nnoremap <Leader>g :Gstatus<CR>
