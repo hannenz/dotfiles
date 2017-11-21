@@ -27,3 +27,4 @@ alias log='tail -f /var/log/apache2/error.log'
 alias clr='clear'
 alias shrug='echo "¯\_(ツ)_/¯"'
 alias translate="dict -d fd-deu-eng" 
+alias sass-lint='sass-lint -qv'

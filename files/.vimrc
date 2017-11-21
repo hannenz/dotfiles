@@ -21,6 +21,7 @@ Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'tomtom/tcomment_vim'
 Plug 'ajh17/vimcompletesme'
+Plug 'w0rp/ale'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -189,3 +190,8 @@ function! DoPrettyXML()
   exe "set ft=" . l:origft
 endfunction
 command! PrettyXML call DoPrettyXML()
+
+" ALE Options
+let g:ale_linters = {	'javascript':['prettier']}
+let g:ale_fixers =  {	'javascript':['prettier']}
+
