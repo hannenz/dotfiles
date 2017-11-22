@@ -28,3 +28,4 @@ alias clr='clear'
 alias shrug='echo "¯\_(ツ)_/¯"'
 alias translate="dict -d fd-deu-eng" 
 alias sass-lint='sass-lint -qv'
+alias tmux='tmux new-session \; split-window -h \; split-window -v \; resize-pane -t 2 -x 60 \; attach'

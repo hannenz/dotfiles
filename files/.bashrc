@@ -37,6 +37,13 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 # Aliases
 source ~/.bash_aliases
 
+# Fnuctions
+function ts () {
+	tmux send-keys -t 2 "$*" C-m
+}
+
+
+
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
     if [ $# -lt 1 ] ; then

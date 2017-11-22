@@ -156,6 +156,9 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>l :Lines<CR>
 
+" (Re-)run gulp in right pane
+nnoremap <Leader>p :!tmux send-keys -t 2 C-c 'gulp' C-m<CR><CR>
+
 iabbrev </ </<C-X><C-O>
 
 let g:UltiSnipsExpandTrigger = '<f5>'
