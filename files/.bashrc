@@ -38,7 +38,7 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 source ~/.bash_aliases
 
 # Functions
-source ~/.bash_functions
+# source ~/.bash_functions
 
 
 # Make a sql dump of the given database. Dump is written to /tmp

@@ -157,7 +157,9 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>l :Lines<CR>
 
 " (Re-)run gulp in right pane
-nnoremap <Leader>p :!tmux send-keys -t 2 C-c 'gulp' C-m<CR><CR>
+nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
+
+
 
 iabbrev </ </<C-X><C-O>
 
