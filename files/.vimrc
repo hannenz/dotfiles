@@ -186,7 +186,7 @@ function! DoPrettyXML()
   $d
   " restore the 'normal' indentation, which is one extra level
   " too deep due to the extra tags we wrapped around the document.
-  silent %<
+silent %</
   " back to home
   1
   " restore the filetype
@@ -195,6 +195,6 @@ endfunction
 command! PrettyXML call DoPrettyXML()
 
 " ALE Options
-let g:ale_linters = {	'javascript':['prettier']}
-let g:ale_fixers =  {	'javascript':['prettier']}
+let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
+let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
 
