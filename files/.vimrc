@@ -57,16 +57,17 @@ set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set ruler                 " Always show info along bottom.
-set autoindent            " auto-indent
 " Tab / Indentation stuff (We want only Tabs)
-set noexpandtab
-set copyindent
-set preserveindent
+set smartindent            " like auto-indent, but adds indentation level...
 set tabstop=4             " tab spacing
-set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
-set shiftround            " always indent/outdent to the nearest tabstop
-set smarttab              " use tabs at the start of a line, spaces elsewhere
+set noexpandtab
+" set copyindent
+" set preserveindent
+"set softtabstop=4         " unify
+" set shiftround            " always indent/outdent to the nearest tabstop
+"set smarttab              " use tabs at the start of a line, spaces elsewhere
+
 set ignorecase			  " ignorecase must be set for smartcase to work -- wtf?
 set smartcase             " smartcase in search: case sensitive as soon as a capital letter is in the query
 set nowrap                " don't wrap text
