@@ -29,7 +29,8 @@ Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-filetype plugin on		  " filetype detection[ON] plugin[ON] indent[OFF]
+" filetype plugin on		  " filetype detection[ON] plugin[ON] indent[OFF]
+filetype plugin indent off
 syntax enable             " enable syntax highlighting (previously syntax on).
 
 " theme configuration
@@ -200,4 +201,8 @@ command! PrettyXML call DoPrettyXML()
 " ALE Options
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
 let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '-x'
+let g:ale_sign_warning = '-!'
+
 
