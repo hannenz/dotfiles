@@ -22,6 +22,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tomtom/tcomment_vim'
 Plug 'ajh17/vimcompletesme'
 Plug 'w0rp/ale'
+Plug 'maxbane/vim-asm_ca65'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
