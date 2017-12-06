@@ -16,7 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/Tabmerge'
-Plug 'sirver/ultisnips'
+" Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'tomtom/tcomment_vim'
@@ -102,6 +102,9 @@ nmap <PageDown> ddp
 vmap <PageUp> xkP`[V`]
 vmap <PageDown> xp`[V`]
 
+" map 'jj' to ESC (exit insert mode)
+imap jj <Esc>
+
 " netrw
 " https://shapeshed.com/vim-netrw/
 let g:netrw_banner = 0		" Disable banner of netrw
@@ -157,6 +160,7 @@ nnoremap <Leader>l :ls<CR>
 " fzf shortcuts
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>l :Lines<CR>
+nnoremap <silent> <C-p> :Files<CR>
 
 " (Re-)run gulp in right pane
 nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
