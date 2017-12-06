@@ -106,6 +106,15 @@ vmap <PageDown> xp`[V`]
 " map 'jj' to ESC (exit insert mode)
 imap jj <Esc>
 
+
+
+" Insert blank line in normal mode
+map <C-k> O<ESC>
+" Pair it with Ctrl-k to delete a line (convenience for dd)
+map <C-j> "_dd
+
+
+
 " netrw
 " https://shapeshed.com/vim-netrw/
 let g:netrw_banner = 0		" Disable banner of netrw
