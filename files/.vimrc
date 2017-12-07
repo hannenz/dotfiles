@@ -1,7 +1,8 @@
-set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
+set nocompatible 
 
 " Plugins via vim-plug
 call plug#begin()
+
 " Syntax
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -30,9 +31,13 @@ Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
+
+
 " filetype plugin on		  " filetype detection[ON] plugin[ON] indent[OFF]
 filetype plugin indent off
 syntax enable             " enable syntax highlighting (previously syntax on).
+
+
 
 " theme configuration
 "set t_Co=256             " enable 256-color mode.
@@ -47,6 +52,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:airline_theme='quantum'
 colorscheme quantum        " set colorscheme
 
+
+
 " Relative (hybrid) line numbers
 set number relativenumber
 augroup numbertoggle
@@ -54,6 +61,8 @@ augroup numbertoggle
 	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
+
+
 
 set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
@@ -80,44 +89,10 @@ set cursorline            " highlight current line
 set splitright
 set splitbelow
  
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+set autoindent
+set previewheight=30
 
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
-
-" ok, sometimes, it's just useful...
-set mouse=a
-
-" Run shell commands as interactive shell (Read .bashrc, use aliases etc.)
-" set shellcmdflag=-ic
-" Better (https://superuser.com/a/646268/111493):
-let $BASH_ENV = "~/.bash_aliases"
-
-" 'Bubble' lines/blocks up/down (like sublime text) // needs a better mapping
-" though !!
-nmap <PageUp> ddkP
-nmap <PageDown> ddp
-vmap <PageUp> xkP`[V`]
-vmap <PageDown> xp`[V`]
-
-" map 'jj' to ESC (exit insert mode)
-imap jj <Esc>
-
-
-
-" Insert blank line in normal mode
-map <C-k> O<ESC>
-" Pair it with Ctrl-k to delete a line (convenience for dd)
-map <C-j> "_dd
-
-
-
-" netrw
-" https://shapeshed.com/vim-netrw/
-let g:netrw_banner = 0		" Disable banner of netrw
+set mouse=a 	" ok, sometimes, it's just useful...
 
 " Faster Schift+O, see https://github.com/vim/vim/issues/24
 set timeout timeoutlen=5000 ttimeoutlen=100
@@ -125,6 +100,36 @@ set timeout timeoutlen=5000 ttimeoutlen=100
 " Allow project specific .vimrc config files
 set exrc
 set secure
+
+
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+
+
+" Run shell commands as interactive shell (Read .bashrc, use aliases etc.)
+" set shellcmdflag=-ic
+" Better (https://superuser.com/a/646268/111493):
+let $BASH_ENV = "~/.bash_aliases"
+
+
+
+" Key mappings
+
+" map 'jj' to ESC (exit insert mode)
+imap jj <Esc>
+" Insert blank line in normal mode
+map <C-k> O<ESC>
+" Pair it with Ctrl-k to delete a line (convenience for dd)
+map <C-j> "_dd
+" Save with C-s
+nmap <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>a
 
 " Buffer list navigation
 nnoremap <silent> [b :bprevious<CR>
@@ -136,27 +141,12 @@ nnoremap <silent> ]c :cnext<CR>
 nnoremap <silent> [C :cfirst<CR>
 nnoremap <silent> ]C :clast<CR>
 
-" set errorformat^=%-G%f:%l:\ warning:%m
-" set errorformat^=%f:%l.%c-%v.%n:\ warning:%m
-set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
-
-" Ignore files, also respected by ctrlp
-set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
-" Allow more results in CtrlP
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:20'
-" Make CtrlP open in new tab by default
-" let g:ctrlp_prompt_mappin
-" 	\'AcceptSelection("e")': ['<c-t>'],
-" 	\'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>']
-" 	\}
-
-
-
-" Dont descend in submodules
-let g:ctrlp_working_path_mode = 'rw'
-
-
-au BufRead,BufNewFile *.scss set filetype=sass
+" 'Bubble' lines/blocks up/down (like sublime text) // needs a better mapping
+" though !!
+nmap <PageUp> ddkP
+nmap <PageDown> ddp
+vmap <PageUp> xkP`[V`]
+vmap <PageDown> xp`[V`]
 
 " Open entries of quick fix list in new tab
 " set switchbuf+=usetab,newtab
@@ -178,11 +168,36 @@ nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
 
 
 
+
+
+
+" netrw
+" https://shapeshed.com/vim-netrw/
+let g:netrw_banner = 0		" Disable banner of netrw
+
+
+set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
+
+" Ignore files, also respected by ctrlp
+set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
+
+
+au BufRead,BufNewFile *.scss set filetype=sass
+
+
+
 iabbrev </ </<C-X><C-O>
 
 let g:UltiSnipsExpandTrigger = '<f5>'
-set autoindent
-set previewheight=30
+
+" ALE Options
+let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
+let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '-x'
+let g:ale_sign_warning = '-!'
+
+
 
 function! DoPrettyXML()
   " save the filetype so we can restore it later
@@ -213,11 +228,11 @@ silent %</
 endfunction
 command! PrettyXML call DoPrettyXML()
 
-" ALE Options
-let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
-let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '-x'
-let g:ale_sign_warning = '-!'
+
+function! DoShrug()
+	 return "<Esc>a¯\_(ツ)_/¯<Esc>"
+endfunction
+command! Shrug call DoShrug()
+
 
 
