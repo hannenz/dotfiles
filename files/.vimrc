@@ -161,7 +161,8 @@ au BufRead,BufNewFile *.scss set filetype=sass
 " Open entries of quick fix list in new tab
 " set switchbuf+=usetab,newtab
 
-au BufRead,BufNewFile *.scss set filetype=sass shiftwidth=4 tabstop=4
+au BufRead,BufNewFile *.scss set filetype=sass
+au BufRead,BufNewFile *.s set filetype=asm_ca65
 nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
