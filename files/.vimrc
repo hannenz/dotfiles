@@ -234,5 +234,14 @@ function! DoShrug()
 endfunction
 command! Shrug call DoShrug()
 
+" Some stuff from https://kinbiko.com/vim/my-shiniest-vim-gems/
 
+" Sane line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
+" highlight ugly code
+match ErrorMsg '\%>120v.\+'
+match ErrorMsg '\s\+$'
 
