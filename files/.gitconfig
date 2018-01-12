@@ -9,3 +9,5 @@
 	tree = log --decorate --pretty=oneline --abbrev-commit --graph
 	l1 = log --oneline
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[pull]
+	rebase = true
