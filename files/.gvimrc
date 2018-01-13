@@ -7,3 +7,5 @@ let g:airline_theme = 'quantum'
 " Disable bell
 set vb t_vb=
 
+set lines=100 columns=180
+
