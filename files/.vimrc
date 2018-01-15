@@ -245,3 +245,8 @@ endif
 match ErrorMsg '\%>120v.\+'
 match ErrorMsg '\s\+$'
 
+
+" Use ag over grep
+if executable ('ag')
+	set grepprg=ag\ --nogroup\ --nocolor
+endif
