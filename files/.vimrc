@@ -17,7 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/Tabmerge'
-" Plug 'sirver/ultisnips'
+Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'tomtom/tcomment_vim'
