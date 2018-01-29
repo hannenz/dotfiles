@@ -103,8 +103,8 @@ function jcd  {
 
 
 # POWERLINE Shell
-if [ -e /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ] ; then
-	. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+if [ -e ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] ; then
+	. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
 

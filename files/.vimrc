@@ -53,14 +53,15 @@ let g:airline_theme='quantum'
 colorscheme quantum        " set colorscheme
 
 
+set number
 
 " Relative (hybrid) line numbers
-set number relativenumber
-augroup numbertoggle
-	autocmd!
-	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
+" set number relativenumber
+" augroup numbertoggle
+" 	autocmd!
+" 	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+" 	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+" augroup END
 
 
 
