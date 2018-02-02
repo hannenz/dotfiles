@@ -167,6 +167,8 @@ nnoremap <silent> <C-p> :Files<CR>
 " (Re-)run gulp in right pane
 nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
 
+" List buffer and ready to select
+nnoremap <Leader>b :ls<CR>:b
 
 
 
