@@ -14,6 +14,8 @@ Plug 'plasticboy/vim-markdown'
 " Plugins
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,6 +27,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'ajh17/vimcompletesme'
 Plug 'w0rp/ale'
 Plug 'maxbane/vim-asm_ca65'
+Plug 'majutsushi/tagbar'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
