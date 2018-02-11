@@ -1,12 +1,1 @@
-{
-	"default_module": "powerline.segments.shell",
-	"segments": {
-		"left": [
-			{
-				"function": "continuation"
-			}
-		],
-		"right": [
-		]
-	}
-}
+/home/hannenz/dotfiles/files/.config/powerline/themes/shell/continuation.json

@@ -1,5 +1,1 @@
-{
-	"groups": {
-		"stack_depth": { "fg": "solarized:base03", "bg": "solarized:base2", "attrs": ["bold"] }
-	}
-}
+/home/hannenz/dotfiles/files/.config/powerline/colorschemes/pdb/solarized.json

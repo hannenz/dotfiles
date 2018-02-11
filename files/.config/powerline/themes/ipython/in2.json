@@ -1,12 +1,1 @@
-{
-	"segments": {
-		"left": [
-			{
-				"type": "string",
-				"contents": "",
-				"width": "auto",
-				"highlight_groups": ["prompt"]
-			}
-		]
-	}
-}
+/home/hannenz/dotfiles/files/.config/powerline/themes/ipython/in2.json

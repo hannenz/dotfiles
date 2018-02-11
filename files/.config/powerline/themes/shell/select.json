@@ -1,13 +1,1 @@
-{
-	"segments": {
-		"left": [
-			{
-				"type": "string",
-				"contents": "Select variant",
-				"width": "auto",
-				"align": "r",
-				"highlight_groups": ["continuation:current"]
-			}
-		]
-	}
-}
+/home/hannenz/dotfiles/files/.config/powerline/themes/shell/select.json
