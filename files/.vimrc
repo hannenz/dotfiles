@@ -1,4 +1,5 @@
-set nocompatible 
+" Don't set nocompatible! (https://www.reddit.com/r/vim/wiki/vimrctips)
+"set nocompatible 
 
 " Plugins via vim-plug
 call plug#begin()
@@ -37,9 +38,8 @@ call plug#end()
 
 
 
-" filetype plugin on		  " filetype detection[ON] plugin[ON] indent[OFF]
-filetype plugin indent off
-syntax enable             " enable syntax highlighting (previously syntax on).
+filetype plugin indent on 	" filetype detection[ON] plugin[ON] indent[OFF]
+syntax enable 				" enable syntax highlighting (previously syntax on).
 
 
 
@@ -74,10 +74,15 @@ set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set ruler                 " Always show info along bottom.
 " Tab / Indentation stuff (We want only Tabs)
-set smartindent            " like auto-indent, but adds indentation level...
-set tabstop=4             " tab spacing
+" set smartindent            " like auto-indent, but adds indentation level...
+set autoindent
+set previewheight=30
+
+" From https://www.reddit.com/r/vim/wiki/tabstop
+set tabstop=8             " tab spacing
+set softtabstop=4
 set shiftwidth=4          " indent/outdent by 4 columns
-set noexpandtab
+set expandtab
 " set copyindent
 " set preserveindent
 "set softtabstop=4         " unify
@@ -94,8 +99,6 @@ set cursorline            " highlight current line
 set splitright
 set splitbelow
  
-set autoindent
-set previewheight=30
 
 set mouse=a 	" ok, sometimes, it's just useful...
 
@@ -158,6 +161,11 @@ vmap <PageDown> xp`[V`]
 
 au BufRead,BufNewFile *.scss set filetype=sass
 au BufRead,BufNewFile *.s set filetype=asm_ca65
+
+
+" Mappings
+let mapleader=' '
+
 nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
