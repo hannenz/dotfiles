@@ -30,7 +30,6 @@ Plug 'w0rp/ale'
 Plug 'maxbane/vim-asm_ca65'
 Plug 'majutsushi/tagbar'
 Plug 'joonty/vdebug'
-
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'jnurmine/zenburn'
@@ -171,6 +170,8 @@ nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
 nnoremap <Leader>l :ls<CR>
+" Reload a current browser-sync'ed tab
+nnoremap <Leader>r :!curl http://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf shortcuts
 nnoremap <Leader>f :Files<CR>
@@ -182,6 +183,10 @@ nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
 
 " List buffer and ready to select
 nnoremap <Leader>b :ls<CR>:b
+
+" Toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 
 
 
