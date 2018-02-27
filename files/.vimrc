@@ -29,6 +29,7 @@ Plug 'ajh17/vimcompletesme'
 Plug 'w0rp/ale'
 Plug 'maxbane/vim-asm_ca65'
 Plug 'majutsushi/tagbar'
+Plug 'joonty/vdebug'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -265,3 +266,10 @@ match ErrorMsg '\s\+$'
 if executable ('ag')
 	set grepprg=ag\ --nogroup\ --nocolor
 endif
+
+" Vdebug options (remote debugging with xdebug)
+let g:vdebug_options = { 
+            \ "path_maps" : {"/var/www/html": "/home/hannenz/html"},
+            \ "break_on_open": 0
+\}
+
