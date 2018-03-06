@@ -79,10 +79,16 @@ set autoindent
 set previewheight=30
 
 " From https://www.reddit.com/r/vim/wiki/tabstop
-set tabstop=8             " tab spacing
-set softtabstop=4
-set shiftwidth=4          " indent/outdent by 4 columns
-set expandtab
+" set tabstop=8             " tab spacing
+" set softtabstop=4
+" set shiftwidth=4          " indent/outdent by 4 columns
+" set expandtab
+
+" To use tabs uncomment this
+set tabstop=4
+set noexpandtab
+set shiftwidth=4
+
 " set copyindent
 " set preserveindent
 "set softtabstop=4         " unify
@@ -171,7 +177,7 @@ nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
 nnoremap <Leader>l :ls<CR>
 " Reload a current browser-sync'ed tab
-nnoremap <Leader>r :!curl http://localhost:3000/__browser_sync__?method=reload<CR><CR>
+nnoremap <Leader>r :!curl https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf shortcuts
 nnoremap <Leader>f :Files<CR>
@@ -279,4 +285,11 @@ let g:vdebug_options = {
 \}
 
 nnoremap <leader>m :!make<CR>
+" Override any filetype settings concerning tabs
+" https://www.reddit.com/r/vim/comments/7g4afp/using_tabs_only/
+augroup my_indent_options
+	autocmd!
+	autocmd FileType * setlocal noexpandtab
+	autocmd FileType * setlocal shiftwidth=4
+augroup END
 
