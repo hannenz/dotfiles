@@ -216,7 +216,7 @@ au BufRead,BufNewFile *.scss set filetype=sass
 iabbrev </ </<C-X><C-O>
 
 let g:UltiSnipsExpandTrigger = '<C-s>'
-let g:UltiSnipsSnippetsDir = "~/.vim/mysnippets"
+let g:UltiSnipsSnippetDirectories = [ "mysnippets", "UltiSnips"]
 
 " ALE Options
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
