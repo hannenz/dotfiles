@@ -34,26 +34,6 @@ snippet while
 		${0:${VISUAL}}
 snippet !
 	 !important
-snippet bdi:m+
-	-moz-border-image: url('${1}') ${2:0} ${3:0} ${4:0} ${5:0} ${6:stretch} ${0:stretch}
-snippet bdi:m
-	-moz-border-image: ${0}
-snippet bdrz:m
-	-moz-border-radius: ${0}
-snippet bxsh:m+
-	-moz-box-shadow: ${1:0} ${2:0} ${3:0} #${0:000}
-snippet bxsh:m
-	-moz-box-shadow: ${0}
-snippet bdi:w+
-	-webkit-border-image: url('${1}') ${2:0} ${3:0} ${4:0} ${5:0} ${6:stretch} ${0:stretch}
-snippet bdi:w
-	-webkit-border-image: ${0}
-snippet bdrz:w
-	-webkit-border-radius: ${0}
-snippet bxsh:w+
-	-webkit-box-shadow: ${1:0} ${2:0} ${3:0} #${0:000}
-snippet bxsh:w
-	-webkit-box-shadow: ${0}
 snippet @f
 	@font-face
 		font-family: ${1}
@@ -1005,20 +985,3 @@ snippet :nlc
 	:nth-last-child(${0})
 snippet :oc
 	:only-child
-snippet :a
-	::after {
-		content: "";
-	}
-snippet :b
-	::before {
-		content: "";
-	}
-
-snippet &:a 
-	&::after {
-		content: "";
-	}
-snippet &:b 
-	&::after {
-		content: "";
-	}

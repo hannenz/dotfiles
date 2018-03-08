@@ -21,11 +21,15 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/Tabmerge'
+" UltiSnips and Snippets
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'justinmk/vim-sneak'
-Plug 'tomtom/tcomment_vim'
+" Auto completion
 Plug 'ajh17/vimcompletesme'
+" Supertab allows use of tab for both autocomletion and snippets exapansion
+Plug 'ervandew/supertab'
+Plug 'tomtom/tcomment_vim'
+Plug 'justinmk/vim-sneak'
 Plug 'w0rp/ale'
 Plug 'maxbane/vim-asm_ca65'
 Plug 'majutsushi/tagbar'
@@ -206,17 +210,15 @@ let g:netrw_banner = 0		" Disable banner of netrw
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
 " Ignore files, also respected by ctrlp
-set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
-
+" set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
 
 au BufRead,BufNewFile *.scss set filetype=sass
 
-
-
 iabbrev </ </<C-X><C-O>
 
-let g:UltiSnipsExpandTrigger = '<C-s>'
-let g:UltiSnipsSnippetDirectories = [ "mysnippets", "UltiSnips"]
+" Subdirectory names to look for snippets below any path defined
+" in runtimepath
+let g:UltiSnipsSnippetDirectories = [ "UltiSnips", "mysnippets"]
 
 " ALE Options
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
