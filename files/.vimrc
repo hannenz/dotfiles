@@ -38,6 +38,7 @@ Plug 'joonty/vdebug'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'
 call plug#end()
 
 
