@@ -11,6 +11,7 @@ Plug 'vim-scripts/gtk-vim-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'plasticboy/vim-markdown'
+Plug 'arrufat/vala.vim'
 
 " Plugins
 Plug 'tpope/vim-fugitive'
@@ -39,6 +40,7 @@ Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
+Plug 'fenetikm/falcon'
 call plug#end()
 
 
