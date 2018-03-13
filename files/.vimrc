@@ -18,10 +18,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-capslock'
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-eunuch'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-scripts/Tabmerge'
+" Plug 'vim-scripts/Tabmerge'
 " UltiSnips and Snippets
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -38,11 +41,10 @@ Plug 'joonty/vdebug'
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'jnurmine/zenburn'
-Plug 'altercation/vim-colors-solarized'
-Plug 'sickill/vim-monokai'
-Plug 'fenetikm/falcon'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'sickill/vim-monokai'
+" Plug 'fenetikm/falcon'
 call plug#end()
-
 
 
 filetype plugin indent on 	" filetype detection[ON] plugin[ON] indent[OFF]
@@ -75,6 +77,8 @@ set number
 " augroup END
 
 
+
+" SETTINGS
 
 set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
@@ -112,6 +116,12 @@ set cursorline            " highlight current line
 set splitright
 set splitbelow
  
+" from tpope's vim-sensible
+set autoread 				" Re-read file if it has been edited outside vim and not inside
+set scrolloff=1 			" Keep at least 1 line visible at top/bottom when scrolling
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
 
 set mouse=a 	" ok, sometimes, it's just useful...
 
@@ -195,7 +205,7 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
 
 " List buffer and ready to select
-nnoremap <Leader>b :ls<CR>:b
+nnoremap <Leader>b :Buffer<CR>
 
 " Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
