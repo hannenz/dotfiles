@@ -16,10 +16,10 @@ find ${DOTFILES_DIR} -type f  | while read file ; do
     DESTFILE=${DESTDIR}/${FILENAME}
     if [ -e "${DESTFILE}" ] ; then 
 
-        echo "Backing up ${DESTFILE} to ${BACKUP_DIR}/${DIR}/${FILENAME}"
+        # echo "Backing up ${DESTFILE} to ${BACKUP_DIR}/${DIR}/${FILENAME}"
 
         if [ ! -e "${BACKUP_DIR}/${DIR}" ] ; then
-            echo "creating Directory: ${BACKUP_DIR}/${DIR}"
+            # echo "creating Directory: ${BACKUP_DIR}/${DIR}"
             mkdir -p "${BACKUP_DIR}/${DIR}"
         fi
         # cp -L --> dereference in case of a symbolic link
