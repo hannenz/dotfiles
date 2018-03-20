@@ -41,9 +41,9 @@ Plug 'joonty/vdebug'
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'jnurmine/zenburn'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'sickill/vim-monokai'
-" Plug 'fenetikm/falcon'
+Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'
+Plug 'fenetikm/falcon'
 call plug#end()
 
 
