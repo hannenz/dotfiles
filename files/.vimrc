@@ -113,6 +113,8 @@ set wildmode=longest,list " Tab-completion like in bash
 set cursorline            " highlight current line
 "hi CursorLine cterm=NONE ctermbg=234 ctermfg=NONE
 
+set lazyredraw 				" Don't redraw the screen when executing macros etc.
+
 set splitright
 set splitbelow
  
