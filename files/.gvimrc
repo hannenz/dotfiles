@@ -9,3 +9,4 @@ set vb t_vb=
 
 set lines=100 columns=180
 
+set guioptions-=T
