@@ -10,7 +10,7 @@
     	"block-opening-brace-space-after": "always-single-line",
     	"block-opening-brace-space-before": "always",
     	"color-hex-case": "lower",
-    	"color-hex-length": "long",
+    	"color-hex-length": "short",
     	"comment-whitespace-inside": "always",
     	"custom-property-empty-line-before": [ "always", {
       		"except": [
