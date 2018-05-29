@@ -212,6 +212,7 @@ nnoremap <Leader>b :Buffer<CR>
 " Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+nnoremap <Leader>a :ALENext<CR>
 
 
 
@@ -236,7 +237,7 @@ iabbrev </ </<C-X><C-O>
 let g:UltiSnipsSnippetDirectories = [ "UltiSnips", "mysnippets"]
 
 " ALE Options
-let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint']}
+let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'bash': ['shell -n']}
 let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '-x'
