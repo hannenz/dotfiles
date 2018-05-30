@@ -44,6 +44,9 @@ Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'fenetikm/falcon'
+
+" Other
+Plug 'hobbestigrou/vimtips-fortune'
 call plug#end()
 
 
