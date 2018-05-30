@@ -1,13 +1,12 @@
 /backup
 files/.vim/plugged
-*.swp
+# *.swp
 
+# Created by https://www.gitignore.io/api/vim
 ### Vim ###
 # swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-v][a-z]
-[._]sw[a-p]
+.sw[a-p]
+.*.sw[a-p]
 # session
 Session.vim
 # temporary
@@ -15,4 +14,5 @@ Session.vim
 *~
 # auto-generated tag files
 tags
+# End of https://www.gitignore.io/api/vim
 
