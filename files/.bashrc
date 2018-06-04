@@ -102,6 +102,16 @@ function jcd  {
 
 
 
+#############
+#  History  #
+#############
+
+# Always append
+shopt -s histappend
+
+# Share history between different tmux panes/windows
+export PROMPT_COMMAND="history -a; history -n"
+
 # POWERLINE Shell
 if [ -e ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] ; then
 	. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
