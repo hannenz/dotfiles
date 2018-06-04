@@ -315,3 +315,7 @@ augroup my_indent_options
 	autocmd FileType * setlocal shiftwidth=4
 augroup END
 
+" Disable vim tips ("fortunes") fot the time being...
+let g:fortune_vimtips_auto_display = 0
+
+
