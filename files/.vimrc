@@ -1,5 +1,6 @@
 " Don't set nocompatible! (https://www.reddit.com/r/vim/wiki/vimrctips)
-"set nocompatible 
+" Had to re-enable it since today I got a load full of E10 errors on startup: https://stackoverflow.com/a/18371495/1490536
+set nocompatible 
 
 " Plugins via vim-plug
 call plug#begin()
