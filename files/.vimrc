@@ -45,6 +45,7 @@ Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'fenetikm/falcon'
+Plug 'nightsense/carbonized'
 
 " Other
 Plug 'hobbestigrou/vimtips-fortune'
@@ -141,6 +142,7 @@ set backspace=indent,eol,start
 set exrc
 set secure
 
+set backspace=indent,eol,start
 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
