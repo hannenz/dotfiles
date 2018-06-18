@@ -134,6 +134,9 @@ set mouse=a 	" ok, sometimes, it's just useful...
 " Faster Schift+O, see https://github.com/vim/vim/issues/24
 set timeout timeoutlen=5000 ttimeoutlen=100
 
+" http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=indent,eol,start
+
 " Allow project specific .vimrc config files
 set exrc
 set secure
