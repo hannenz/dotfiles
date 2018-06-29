@@ -196,10 +196,10 @@ alias translate="dict -d fd-deu-eng"
 # Don't record duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
 
-# # Start tmux (https://unix.stackexchange.com/a/113768)
-# if command -v tmux >/dev/null; then
-# 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-# fi
+# Start tmux (https://unix.stackexchange.com/a/113768)
+if command -v tmux >/dev/null; then
+	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
 
 # if [[ "$TERM" != "screen-256color" ]]
 # then
