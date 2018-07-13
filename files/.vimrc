@@ -49,6 +49,7 @@ Plug 'nightsense/carbonized'
 
 " Other
 Plug 'hobbestigrou/vimtips-fortune'
+Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 

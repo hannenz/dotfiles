@@ -13,6 +13,11 @@ if [ -f /etc/bash_completion ] ; then
 	. /etc/bash_completion
 fi
 
+# cheat.sh completion
+if [ -f ~/.cheat.sh.completion ] ; then
+	. ~/.cheat.sh.completion
+fi
+
 # Bashmarks (https://github.com/huyng/bashmarks)
 source ${HOME}/.local/bin/bashmarks.sh
 
@@ -197,6 +202,7 @@ alias translate="dict -d fd-deu-eng"
 export HISTCONTROL=ignoreboth:erasedups
 
 # Start tmux (https://unix.stackexchange.com/a/113768)
+# Makes sure, that tmux exists, does not try to execute itself
 if command -v tmux >/dev/null; then
 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
