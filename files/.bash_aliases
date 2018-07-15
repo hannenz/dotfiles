@@ -33,6 +33,7 @@ alias translate="dict -d fd-deu-eng"
 #alias sass-lint='sass-lint -qv -c /home/hannenz/.sasslintrc'
 alias stylelint='stylelint --config /home/hannenz/.stylelintrc.json'
 alias tmx='tmux new-session \; split-window -h \; split-window -v \; resize-pane -t 2 -x 60 \; attach'
+alias less='less -r'
 # alias vim='nvim'
 
 function ts () {
