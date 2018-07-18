@@ -160,6 +160,7 @@ let &t_EI = "\<Esc>[2 q"
 " Better (https://superuser.com/a/646268/111493):
 let $BASH_ENV = "~/.bash_aliases"
 
+set foldmethod=manual
 
 
 " Key mappings
