@@ -72,6 +72,7 @@ let g:airline_theme='quantum'
 colorscheme quantum        " set colorscheme
 
 
+set nofoldenable 			" disable folding
 set number
 
 " Relative (hybrid) line numbers
