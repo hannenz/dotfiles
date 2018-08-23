@@ -1,6 +1,9 @@
 shopt -s expand_aliases
 
-alias ls='ls --color=auto'
+
+export CLICOLOR=1 # Colored output for ls on mac osx
+ls --color=auto &>/dev/null && alias ls='ls --color=auto'
+
 alias ll='ls -l'
 alias la='ls -lart'
 alias cd..='cd ..'
