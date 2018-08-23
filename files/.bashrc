@@ -6,12 +6,14 @@
 [[ $- != *i* ]] && return
 
 # Set PATH
-PATH="$PATH:.:/home/hannenz/bin:/home/hannenz/.local/bin:/home/hannenz/.local/bin/phpctags/bin"
+PATH="/usr/local/bin:$PATH"
 
-# Load bash completion
+# Load bash completion (Linux)
 if [ -f /etc/bash_completion ] ; then
 	. /etc/bash_completion
 fi
+# Bash completion on osx (installed via homebrew)
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # cheat.sh completion
 if [ -f ~/.cheat.sh.completion ] ; then
@@ -19,7 +21,7 @@ if [ -f ~/.cheat.sh.completion ] ; then
 fi
 
 # Bashmarks (https://github.com/huyng/bashmarks)
-source ${HOME}/.local/bin/bashmarks.sh
+test -e ${HOME}/.local/bin/bashmarks.sh && source ${HOME}/.local/bin/bashmarks.sh
 
 # Set VI mode
 set -o vi
@@ -122,6 +124,9 @@ if [ -e ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.s
 	. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
+if [ -e ~/liquidprompt/liquidprompt ] ; then
+	. ~/liquidprompt/liquidprompt
+fi
 
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
@@ -228,3 +233,4 @@ _fzf_complete_pass() {
 }
 
 [ -n "$BASH" ] && complete -F _fzf_complete_pass -o default -o bashdefault pass
+
