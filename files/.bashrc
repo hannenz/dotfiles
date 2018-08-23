@@ -5,8 +5,24 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+
+##########
+#  PATH  #
+##########
+
 # Set PATH
 PATH="/usr/local/bin:$PATH"
+
+
+
+
+
+################
+#  COMPLETION  #
+################
 
 # Load bash completion (Linux)
 if [ -f /etc/bash_completion ] ; then
@@ -15,17 +31,66 @@ fi
 # Bash completion on osx (installed via homebrew)
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
+
+
 # cheat.sh completion
 if [ -f ~/.cheat.sh.completion ] ; then
 	. ~/.cheat.sh.completion
 fi
 
+
+
+# Tab completion for hosts in .netrc (ftp hosts)
+function netrc_completion {
+	for match in $(grep "machine.*${COMP_WORDS[$COMP_CWORD]}.*$" ${HOME}/.netrc | cut -d" " -f 2) ; do
+		COMPREPLY=(${COMPREPLY[@]} "${match}")
+	done
+}
+complete -F netrc_completion ftp ftpdiff
+
+
+
+# pass completion suggested by @d4ndo (#362)
+_fzf_complete_pass() {
+  _fzf_complete '+m' "$@" < <(
+    pwdir=${PASSWORD_STORE_DIR-~/.password-store/}
+    stringsize="${#pwdir}"
+    find "$pwdir" -name "*.gpg" -print |
+        cut -c "$((stringsize + 1))"-  |
+        sed -e 's/\(.*\)\.gpg/\1/'
+  )
+}
+
+[ -n "$BASH" ] && complete -F _fzf_complete_pass -o default -o bashdefault pass
+
+
+
+###############
+#  BASHMARKS  #
+###############
+
 # Bashmarks (https://github.com/huyng/bashmarks)
 test -e ${HOME}/.local/bin/bashmarks.sh && source ${HOME}/.local/bin/bashmarks.sh
+
+
+
+#############
+#  OPTIONS  #
+#############
 
 # Set VI mode
 set -o vi
 bind -m vi-command ".":insert-last-argument
+
+# No ixoff (Allow vim to bind <C-s> to :w)
+bind -r '\C-s'
+stty -ixon
+
+
+
+#################
+#  ENVIRONMENT  #
+#################
 
 export EDITOR="vim"
 export FCEDIT="vim"
@@ -41,16 +106,18 @@ export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode - yellow
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 
-# No ixoff (Allow vim to bind <C-s> to :w)
-bind -r '\C-s'
-stty -ixon
 
-# Aliases
+#############
+#  ALIASES  #
+#############
+
 source ~/.bash_aliases
 
-# Functions
-# source ~/.bash_functions
 
+
+###############
+#  FUNCTIONS  #
+###############
 
 # Make a sql dump of the given database. Dump is written to /tmp
 function mksqldump () {
@@ -66,10 +133,14 @@ function mksqldump () {
 	fi
 }
 
+
+
 # Lorem ipsum text to clipboard
 function clipsum () {
 	lipsum "$@" | tee /dev/tty | xclip
 }
+
+
 
 # Find files/dirs by name
 function fname () {
@@ -80,6 +151,9 @@ function fname () {
         find "${1}" -iname "*${2}*"
     fi
 }
+
+
+
 
 #Grep in files - searches recursively in all files for the given pattern
 function grif () {
@@ -97,6 +171,7 @@ function grif () {
 
 
 
+
 # CD in a HALMA Job directory by Job ID
 function jcd  {
         id="${1#*_}"
@@ -109,55 +184,11 @@ function jcd  {
 
 
 
-#############
-#  History  #
-#############
-
-# Always append
-shopt -s histappend
-
-# Share history between different tmux panes/windows
-export PROMPT_COMMAND="history -a; history -n"
-
-# POWERLINE Shell
-if [ -e ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ] ; then
-	. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-fi
-
-if [ -e ~/liquidprompt/liquidprompt ] ; then
-	. ~/liquidprompt/liquidprompt
-fi
-
-
+# fetch .gitignore from gitignore.io
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 
-# Screenfetch only if in certain Terminator terminal
-# if [[ $TERMINATOR_UUID = "urn:uuid:707249f9-d685-4330-95b3-016e1427c143" ]] ; then
-#	screenfetch
-# fi
 
-function tea {
-	if ! [[ $1 =~ ^[0-9]+$ ]] ; then
-		echo "Give time in minutes"
-		return -1;
-	fi
-	echo "notify-send \"Tea Time!\"" | at now + $1 minutes
-	return 0;
-}
-
-
-#
-# Tab completion for hosts in .netrc (ftp hosts)
-#
-function netrc_completion {
-	for match in $(grep "machine.*${COMP_WORDS[$COMP_CWORD]}.*$" ${HOME}/.netrc | cut -d" " -f 2) ; do
-		COMPREPLY=(${COMPREPLY[@]} "${match}")
-	done
-}
-complete -F netrc_completion ftp ftpdiff
-
-#
 # Diff files over FTP
 #
 # USAGE: ftpdiff host remote_file local_file
@@ -176,8 +207,12 @@ EOT
 	diff "$tmp_file" "$local_file"
 }
 
+
+
 # Lookup unicode by name
 function ugrep() { exec 5< <(grep -i "$*" $(locate CharName.pm));while read <&5;do h=${REPLY%% *};/usr/bin/printf "\u$h\tU+%s\t%s\n" "$h" "${REPLY##$h }";done; }
+
+
 
 function plankctl() {
 	case $1 in 
@@ -196,15 +231,44 @@ function plankctl() {
 	esac
 }
 
+
+
 function mkwritable () {
 	sudo chown -R hannenz:www-data $1
 	chmod -R g+w $1
 }
 
-alias translate="dict -d fd-deu-eng" 
+
+
+#############
+#  HISTORY  #
+#############
+
+# Always append
+shopt -s histappend
+
+# Share history between different tmux panes/windows
+export PROMPT_COMMAND="history -a; history -n"
 
 # Don't record duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
+
+
+
+###################
+#  PROMPT         #
+#  Execute late!  #
+###################
+
+if [ -e ~/liquidprompt/liquidprompt ] ; then
+	. ~/liquidprompt/liquidprompt
+fi
+
+
+
+##########
+#  TMUX  #
+##########
 
 # Start tmux (https://unix.stackexchange.com/a/113768)
 # Makes sure, that tmux exists, does not try to execute itself
@@ -212,25 +276,5 @@ if command -v tmux >/dev/null; then
 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
 
-# if [[ "$TERM" != "screen-256color" ]]
-# then
-# 	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
-# fi
 
-
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# pass completion suggested by @d4ndo (#362)
-_fzf_complete_pass() {
-  _fzf_complete '+m' "$@" < <(
-    pwdir=${PASSWORD_STORE_DIR-~/.password-store/}
-    stringsize="${#pwdir}"
-    find "$pwdir" -name "*.gpg" -print |
-        cut -c "$((stringsize + 1))"-  |
-        sed -e 's/\(.*\)\.gpg/\1/'
-  )
-}
-
-[ -n "$BASH" ] && complete -F _fzf_complete_pass -o default -o bashdefault pass
 
