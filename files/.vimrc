@@ -46,6 +46,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
 Plug 'fenetikm/falcon'
 Plug 'nightsense/carbonized'
+Plug 'arcticicestudio/nord-vim'
 
 " Other
 Plug 'hobbestigrou/vimtips-fortune'
@@ -62,14 +63,20 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 "set t_Co=256             " enable 256-color mode.
 set background=dark
 "colorscheme zenburn
-set termguicolors         
-" Make true color work inside tmux
-" (https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/)
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"let g:quantum_italics=1
-let g:airline_theme='quantum'
-colorscheme quantum        " set colorscheme
+
+let s:uname = system("uname")
+if s:uname != "Darwin\n"
+	set termguicolors         
+	" Make true color work inside tmux
+	" (https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/)
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	"let g:quantum_italics=1
+	let g:airline_theme='quantum'
+	colorscheme quantum        " set colorscheme
+else
+	colorscheme nord
+endif
 
 
 set nofoldenable 			" disable folding
@@ -82,7 +89,6 @@ set number
 " 	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 " 	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 " augroup END
-
 
 
 " SETTINGS
@@ -146,15 +152,6 @@ set secure
 
 set backspace=indent,eol,start
 
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
-
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
-
-
 
 " Run shell commands as interactive shell (Read .bashrc, use aliases etc.)
 " set shellcmdflag=-ic
@@ -186,12 +183,6 @@ nnoremap <silent> ]c :cnext<CR>
 nnoremap <silent> [C :cfirst<CR>
 nnoremap <silent> ]C :clast<CR>
 
-" 'Bubble' lines/blocks up/down (like sublime text) // needs a better mapping
-" though !!
-nmap <PageUp> ddkP
-nmap <PageDown> ddp
-vmap <PageUp> xkP`[V`]
-vmap <PageDown> xp`[V`]
 
 " Open entries of quick fix list in new tab
 " set switchbuf+=usetab,newtab
