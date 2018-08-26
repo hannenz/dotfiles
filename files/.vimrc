@@ -39,6 +39,8 @@ Plug 'w0rp/ale'
 Plug 'maxbane/vim-asm_ca65'
 Plug 'majutsushi/tagbar'
 Plug 'joonty/vdebug'
+"Plug 'Yilin-Yang/vim-markbar'
+
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'jnurmine/zenburn'
@@ -66,17 +68,15 @@ set background=dark
 
 let s:uname = system("uname")
 if s:uname != "Darwin\n"
-	set termguicolors         
+	" set termguicolors
 	" Make true color work inside tmux
 	" (https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/)
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	"let g:quantum_italics=1
-	let g:airline_theme='quantum'
-	colorscheme quantum        " set colorscheme
-else
-	colorscheme nord
+	" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	" let g:quantum_italics=1
+	" let g:airline_theme='quantum'
 endif
+colorscheme nord
 
 
 set nofoldenable 			" disable folding
@@ -211,6 +211,7 @@ nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
 
 " List buffer and ready to select
 nnoremap <Leader>b :Buffer<CR>
+map <Leader>w <Plug>ToggleMarkbar
 
 " Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
