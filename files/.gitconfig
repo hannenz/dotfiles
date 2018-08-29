@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /home/hannenz/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
 	tree = log --decorate --pretty=oneline --abbrev-commit --graph
 	l1 = log --oneline
