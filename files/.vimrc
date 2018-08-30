@@ -202,9 +202,9 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>r :!curl https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf shortcuts
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>l :Lines<CR>
-nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-p> :GFiles<CR>
 
 " (Re-)run gulp in right pane
 nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
