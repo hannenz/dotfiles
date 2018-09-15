@@ -13,6 +13,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'plasticboy/vim-markdown'
 Plug 'arrufat/vala.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Plugins
 Plug 'tpope/vim-fugitive'
