@@ -94,6 +94,7 @@ set number
 
 " SETTINGS
 
+set hidden 				  " allows to change bufferfs even if there are unsaved changes
 set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
@@ -206,6 +207,7 @@ nnoremap <Leader>r :!curl https://localhost:3000/__browser_sync__?method=reload<
 nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <silent> <C-p> :GFiles<CR>
+nnoremap <silent> <C-P> :Files<CR>
 
 " (Re-)run gulp in right pane
 nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
