@@ -13,16 +13,17 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'plasticboy/vim-markdown'
 Plug 'arrufat/vala.vim'
+Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 
 " Plugins
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-fugitive' 		" git
+Plug 'tpope/vim-obsession' 		" Sessions
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-capslock'
-Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle softwarre capslock mode
+Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
+Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -35,9 +36,8 @@ Plug 'ajh17/vimcompletesme'
 " Supertab allows use of tab for both autocomletion and snippets exapansion
 Plug 'ervandew/supertab'
 Plug 'tomtom/tcomment_vim'
-Plug 'justinmk/vim-sneak'
+Plug 'justinmk/vim-sneak' 		" do we really need / want this..?
 Plug 'w0rp/ale'
-Plug 'maxbane/vim-asm_ca65'
 Plug 'majutsushi/tagbar'
 Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
@@ -53,7 +53,8 @@ Plug 'arcticicestudio/nord-vim'
 
 " Other
 Plug 'hobbestigrou/vimtips-fortune'
-Plug 'dbeniamine/cheat.sh-vim'
+"Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
+Plug 'rhysd/devdocs.vim'
 call plug#end()
 
 
@@ -319,6 +320,11 @@ augroup my_indent_options
 	autocmd FileType * setlocal shiftwidth=4
 augroup END
 
+" Map K to devdocs for certain file types
+augroup plugin=devdocs
+	autocmd!
+	autocmd FileType php,scss,css,html,tpl,ctp,js nmap <buffer>K <Plug>(devdocs-under-cursor)
+augroup END
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0
 
