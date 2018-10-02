@@ -39,7 +39,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'justinmk/vim-sneak' 		" do we really need / want this..?
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
-Plug 'joonty/vdebug'
+" Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
 
 " Colorschemes
@@ -104,6 +104,7 @@ set ruler                 " Always show info along bottom.
 " set smartindent            " like auto-indent, but adds indentation level...
 set autoindent
 set previewheight=30
+set textwidth=80 			" text width to hard-fold (gq)
 
 " From https://www.reddit.com/r/vim/wiki/tabstop
 " set tabstop=8             " tab spacing
