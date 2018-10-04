@@ -14,7 +14,7 @@
 ##########
 
 # Set PATH
-PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/bin:/Users/johannesbraun/.local/bin:$PATH"
 
 
 
