@@ -5,6 +5,7 @@ set nocompatible
 " Plugins via vim-plug
 call plug#begin()
 
+
 " Syntax
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -16,6 +17,7 @@ Plug 'arrufat/vala.vim'
 Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 
+
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
 Plug 'tpope/vim-obsession' 		" Sessions
@@ -24,23 +26,36 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle softwarre capslock mode
 Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'vim-scripts/Tabmerge'
-" UltiSnips and Snippets
+
+
+" Snippets and scaffolding, skeletons
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
+" Plug 'noahfrederick/vim-skeleton'
+Plug 'pgilad/vim-skeletons'
+
+let skeletons#autoRegister = 1
+let skeletons#skeletonsDir = '~/.vim/plugged/vim-skeletons/skeletons'
+
+
 " Auto completion
 Plug 'ajh17/vimcompletesme'
 " Supertab allows use of tab for both autocomletion and snippets exapansion
 Plug 'ervandew/supertab'
 Plug 'tomtom/tcomment_vim'
-Plug 'justinmk/vim-sneak' 		" do we really need / want this..?
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 " Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
+
+
+" Documentation, Help and Manuals
+"Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
+Plug 'rhysd/devdocs.vim'
+Plug 'hobbestigrou/vimtips-fortune'
+
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -51,10 +66,6 @@ Plug 'fenetikm/falcon'
 Plug 'nightsense/carbonized'
 Plug 'arcticicestudio/nord-vim'
 
-" Other
-Plug 'hobbestigrou/vimtips-fortune'
-"Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
-Plug 'rhysd/devdocs.vim'
 call plug#end()
 
 
@@ -328,5 +339,4 @@ augroup plugin=devdocs
 augroup END
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0
-
 
