@@ -40,6 +40,8 @@ alias less='less -r'
 alias cheat='cht.sh'
 # alias vim='nvim'
 
+alias todo='vim ~/Nextcloud/todo'
+
 function ts () {
 	tmux send-keys -t 3 "$*" C-m
 }

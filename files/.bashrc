@@ -272,9 +272,9 @@ fi
 
 # Start tmux (https://unix.stackexchange.com/a/113768)
 # Makes sure, that tmux exists, does not try to execute itself
-if command -v tmux >/dev/null; then
-	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+# if command -v tmux >/dev/null; then
+# 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+# fi
 
 
 
