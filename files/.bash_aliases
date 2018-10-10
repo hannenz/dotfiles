@@ -40,7 +40,11 @@ alias less='less -r'
 alias cheat='cht.sh'
 # alias vim='nvim'
 
-alias todo='vim ~/Nextcloud/todo.md'
+todofile=${HOME}/Nextcloud/todo
+if [ ! -e $todofile ] ; then
+	todofile=${HOME}/Nextcloud/HALMA/todo
+fi
+alias todo='vim $todofile'
 
 function ts () {
 	tmux send-keys -t 3 "$*" C-m
