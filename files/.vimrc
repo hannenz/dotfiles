@@ -340,3 +340,10 @@ augroup END
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0
 
+" Set a positive text width on text-based file types (txt, markdown...)
+" and enable auto wrap
+augroup text_wrap
+	autocmd!
+	autocmd FileType txt,markdown, setlocal textwidth=40
+	autocmd FileType txt,markdown, setlocal formatoptions+=t
+augroup END
