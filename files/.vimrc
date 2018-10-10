@@ -344,6 +344,6 @@ let g:fortune_vimtips_auto_display = 0
 " and enable auto wrap
 augroup text_wrap
 	autocmd!
-	autocmd FileType txt,markdown, setlocal textwidth=40
+	autocmd FileType txt,markdown, setlocal textwidth=70
 	autocmd FileType txt,markdown, setlocal formatoptions+=t
 augroup END
