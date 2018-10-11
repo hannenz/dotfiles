@@ -49,6 +49,11 @@ Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 " Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
+Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
+
+
+
+
 
 
 " Documentation, Help and Manuals
