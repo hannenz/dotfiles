@@ -1,0 +1,3 @@
+bind -v
+bind "\e[3~" ed-delete-next-char
+bind "^R" em-inc-search-prev

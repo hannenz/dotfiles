@@ -1,3 +1,5 @@
+set editing-mode vi
+set keymap vi
 set menu-complete-display-prefix on
 set show-all-if-ambiguous on
 set colored-stats on
@@ -7,6 +9,4 @@ set completion-map-case on
 "\e[B": history-search-forward 
 set bell-style none
 set echo-control-characters off
-
-
 
