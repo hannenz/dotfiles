@@ -47,6 +47,7 @@ Plug 'ervandew/supertab'
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
+Plug 'vim-php/tagbar-phpctags.vim'
 " Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
@@ -236,6 +237,7 @@ map <Leader>w <Plug>ToggleMarkbar
 
 " Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_phpctags_bin='/Users/johannesbraun/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
 
 nnoremap <Leader>a :ALENext<CR>
 

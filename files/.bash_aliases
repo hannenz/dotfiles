@@ -40,9 +40,9 @@ alias less='less -r'
 alias cheat='cht.sh'
 # alias vim='nvim'
 
-todofile=${HOME}/Nextcloud/todo
+todofile=${HOME}/Nextcloud/todo.md
 if [ ! -e $todofile ] ; then
-	todofile=${HOME}/Nextcloud/HALMA/todo
+	todofile=${HOME}/Nextcloud/HALMA/todo.md
 fi
 alias todo='vim $todofile'
 
