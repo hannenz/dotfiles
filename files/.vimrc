@@ -349,6 +349,7 @@ let g:fortune_vimtips_auto_display = 0
 
 " Set a positive text width on text-based file types (txt, markdown...)
 " and enable auto wrap
+set formatoptions-=t
 augroup text_wrap
 	autocmd!
 	autocmd FileType txt,markdown, setlocal textwidth=70
