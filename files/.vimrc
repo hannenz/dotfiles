@@ -355,3 +355,8 @@ augroup text_wrap
 	autocmd FileType txt,markdown, setlocal textwidth=70
 	autocmd FileType txt,markdown, setlocal formatoptions+=t
 augroup END
+
+nnoremap <leader>d ^i[✓] <Esc>df]
+nnoremap <leader>D ^i[ ] <Esc>df]
+
+

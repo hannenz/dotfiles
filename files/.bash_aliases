@@ -44,7 +44,7 @@ todofile=${HOME}/Nextcloud/todo.md
 if [ ! -e $todofile ] ; then
 	todofile=${HOME}/Nextcloud/HALMA/todo.md
 fi
-alias todo='vim $todofile'
+alias todo='tmux rename-window todo && vim $todofile'
 
 function ts () {
 	tmux send-keys -t 3 "$*" C-m
