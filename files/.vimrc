@@ -269,6 +269,8 @@ let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '-x'
 let g:ale_sign_warning = '-!'
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 1
 
 
 
@@ -355,6 +357,7 @@ augroup text_wrap
 	autocmd FileType txt,markdown, setlocal textwidth=70
 	autocmd FileType txt,markdown, setlocal formatoptions+=t
 augroup END
+
 
 nnoremap <leader>d ^i[✓] <Esc>df]
 nnoremap <leader>D ^i[ ] <Esc>df]
