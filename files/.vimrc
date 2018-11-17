@@ -28,6 +28,7 @@ Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
 
 
 " Snippets and scaffolding, skeletons
