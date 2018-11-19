@@ -5,7 +5,6 @@ set nocompatible
 " Plugins via vim-plug
 call plug#begin()
 
-
 " Syntax
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -52,10 +51,6 @@ Plug 'vim-php/tagbar-phpctags.vim'
 " Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
-
-
-
-
 
 
 " Documentation, Help and Manuals
@@ -189,6 +184,7 @@ set foldmethod=manual
 imap jj <Esc>
 " Insert blank line in normal mode
 map <C-k> O<ESC>
+
 " Pair it with Ctrl-k to delete a line (convenience for dd)
 map <C-j> "_dd
 " Save with C-s
@@ -256,13 +252,17 @@ set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 " Ignore files, also respected by ctrlp
 " set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
 
-au BufRead,BufNewFile *.scss set filetype=sass
 
 iabbrev </ </<C-X><C-O>
 
 " Subdirectory names to look for snippets below any path defined
 " in runtimepath
-let g:UltiSnipsSnippetDirectories = [ "UltiSnips", "mysnippets"]
+let g:UltiSnipsSnippetDirectories = [ 'UltiSnips', 'mysnippets' ]
+
+" augroup php-snippets-for-sass-files
+" 	autocmd!
+" 	autocmd FileType scss UltiSnipsAddFileTypes scss.php
+" augroup END
 
 " ALE Options
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'bash': ['shell -n']}
