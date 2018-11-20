@@ -234,7 +234,6 @@ map <Leader>w <Plug>ToggleMarkbar
 
 " Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_phpctags_bin='/Users/johannesbraun/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
 
 nnoremap <Leader>a :ALENext<CR>
 
@@ -249,9 +248,6 @@ let g:netrw_banner = 0		" Disable banner of netrw
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
-" Ignore files, also respected by ctrlp
-" set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/dist/*
-
 
 iabbrev </ </<C-X><C-O>
 
@@ -259,10 +255,6 @@ iabbrev </ </<C-X><C-O>
 " in runtimepath
 let g:UltiSnipsSnippetDirectories = [ 'UltiSnips', 'mysnippets' ]
 
-" augroup php-snippets-for-sass-files
-" 	autocmd!
-" 	autocmd FileType scss UltiSnipsAddFileTypes scss.php
-" augroup END
 
 " ALE Options
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'bash': ['shell -n']}
@@ -332,6 +324,7 @@ let g:vdebug_options = {
             \ "path_maps" : {"/var/www/html": "/home/hannenz/html"},
             \ "break_on_open": 0
 \}
+
 
 nnoremap <leader>m :!make<CR>
 " Override any filetype settings concerning tabs
