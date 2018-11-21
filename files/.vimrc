@@ -28,6 +28,8 @@ Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 
 " Snippets and scaffolding, skeletons
@@ -360,3 +362,5 @@ nnoremap <leader>D ^i[ ] <Esc>df]
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+let g:easytags_cmd = '~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
+let g:easytags_autorecures = 1
