@@ -95,6 +95,8 @@ if s:uname != "Darwin\n"
 endif
 colorscheme nord
 
+set path+=**
+set wildmenu
 
 set nofoldenable 			" disable folding
 set number
