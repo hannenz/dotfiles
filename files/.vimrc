@@ -59,6 +59,7 @@ Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 "Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 Plug 'rhysd/devdocs.vim'
 Plug 'hobbestigrou/vimtips-fortune'
+Plug 'sjb/devhelp.vim'
 
 
 " Colorschemes
