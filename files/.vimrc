@@ -242,7 +242,7 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <Leader>a :ALENext<CR>
 
 
-
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 " netrw
