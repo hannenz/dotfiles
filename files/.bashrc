@@ -278,3 +278,4 @@ fi
 
 
 
+export MYSQL_PWD=pebble
