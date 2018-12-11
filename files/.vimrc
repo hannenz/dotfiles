@@ -8,8 +8,8 @@ call plug#begin()
 " Syntax
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'vim-scripts/gtk-vim-syntax'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'vim-scripts/gtk-vim-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'plasticboy/vim-markdown'
 Plug 'arrufat/vala.vim'
