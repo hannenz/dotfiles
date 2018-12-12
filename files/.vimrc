@@ -102,6 +102,8 @@ set wildmenu
 set nofoldenable 			" disable folding
 set number
 
+" Sane font for GVim / MacVim
+set guifont=SourceCodePro-Regular:h16
 " Relative (hybrid) line numbers
 " set number relativenumber
 " augroup numbertoggle
@@ -367,3 +369,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 let g:easytags_cmd = '~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
 let g:easytags_autorecures = 1
+
+" Helper for diff via FTP / Filezilla
+nnoremap <Leader>v :vertical diffsplit ~/Sites/
