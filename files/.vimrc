@@ -224,7 +224,7 @@ nnoremap <Leader>e :Expl<CR>
 nnoremap <leader>m :!make<CR>
 nnoremap <Leader>l :ls<CR>
 " Reload a current browser-sync'ed tab
-nnoremap <Leader>r :!curl https://localhost:3000/__browser_sync__?method=reload<CR><CR>
+nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf shortcuts
 nnoremap <Leader>f :GFiles<CR>
