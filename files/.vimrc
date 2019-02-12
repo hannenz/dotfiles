@@ -103,7 +103,8 @@ set nofoldenable 			" disable folding
 set number
 
 " Sane font for GVim / MacVim
-set guifont=SourceCodePro-Regular:h14
+" set guifont=SourceCodePro-Regular:h14
+
 " Relative (hybrid) line numbers
 " set number relativenumber
 " augroup numbertoggle

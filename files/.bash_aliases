@@ -38,6 +38,7 @@ alias stylelint='stylelint --config /home/hannenz/.stylelintrc.json'
 alias tmx='tmux new-session \; split-window -h \; split-window -v \; resize-pane -t 2 -x 60 \; attach'
 alias less='less -r'
 alias cheat='cht.sh'
+alias cat=bat
 # alias vim='nvim'
 
 todofile=${HOME}/Nextcloud/todo.md
