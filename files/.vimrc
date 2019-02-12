@@ -370,6 +370,7 @@ vnoremap K :m '<-2<CR>gv=gv
 
 let g:easytags_cmd = '~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
 let g:easytags_autorecures = 1
+let g:easytags_async = 1
 
 " Helper for diff via FTP / Filezilla
 nnoremap <Leader>v :vertical diffsplit ~/Sites/
