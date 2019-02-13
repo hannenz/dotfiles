@@ -14,8 +14,8 @@
 ##########
 
 # Set PATH
-PATH="/usr/local/bin:/Users/johannesbraun/.local/bin:$PATH:~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/build:/home/hannenz/.local/bin"
 
+PATH="/usr/local/bin:~/.local/bin:$PATH:~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/build"
 
 
 
@@ -32,12 +32,10 @@ fi
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 
-
 # cheat.sh completion
 if [ -f ~/.cheat.sh.completion ] ; then
 	. ~/.cheat.sh.completion
 fi
-
 
 
 # Tab completion for hosts in .netrc (ftp hosts)
@@ -46,7 +44,7 @@ function netrc_completion {
 		COMPREPLY=(${COMPREPLY[@]} "${match}")
 	done
 }
-complete -F netrc_completion ftp ftpdiff
+# complete -F netrc_completion ftp ftpdiff
 
 
 
@@ -166,7 +164,7 @@ function smartresize() {
 		echo "Usage: smartresize infile width outpath"
 	else
     	mogrify -path "${3}" -filter Triangle -define filter:support=2 -thumbnail "${2}" -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB "${1}"
-	fi 
+	fi
 }
 
 
@@ -248,7 +246,7 @@ function mkwritable () {
 shopt -s histappend
 
 # Share history between different tmux panes/windows
-export PROMPT_COMMAND="history -a; history -n"
+#export PROMPT_COMMAND="history -a; history -n"
 
 # Don't record duplicates in history
 export HISTCONTROL=ignoreboth:erasedups
