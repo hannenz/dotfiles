@@ -97,7 +97,9 @@ if s:uname != "Darwin\n"
 endif
 colorscheme nord
 
+" Search down into subfolders
 set path+=**
+" Display all mtching files when we tab complete
 set wildmenu
 
 set nofoldenable 			" disable folding
@@ -375,3 +377,6 @@ let g:easytags_async = 1
 
 " Helper for diff via FTP / Filezilla
 nnoremap <Leader>v :vertical diffsplit ~/Sites/
+
+nnoremap ,doc :-1read $HOME/.vim/snippets/doc<CR>j$"%p3jA
+nnoremap ,html :-1read $HOME/.vim/snippets/html<CR>5jcit
