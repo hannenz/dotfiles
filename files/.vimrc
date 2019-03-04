@@ -37,10 +37,6 @@ Plug 'xolox/vim-easytags'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'noahfrederick/vim-skeleton'
-Plug 'pgilad/vim-skeletons'
-
-let skeletons#autoRegister = 1
-let skeletons#skeletonsDir = '~/.vim/plugged/vim-skeletons/skeletons'
 
 
 " Auto completion
@@ -71,6 +67,9 @@ Plug 'sickill/vim-monokai'
 Plug 'fenetikm/falcon'
 Plug 'nightsense/carbonized'
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
+Plug 'vim-scripts/wombat'
+Plug 'cocopon/iceberg.vim'
 
 call plug#end()
 
