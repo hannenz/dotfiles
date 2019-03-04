@@ -1,5 +1,12 @@
 {
+	"plugins": {
+		"stylelint-no-unsupported-browser-features"
+	},
 	"rules": {
+		"plugin/no-unsupported-browser-features": [ true, {
+			"browsers": ["> 1%", "Last 2 versions"],
+			"ignore": []
+		}],
     	"at-rule-name-case": "lower",
     	"at-rule-name-space-after": "always-single-line",
     	"at-rule-semicolon-newline-after": "always",
