@@ -82,6 +82,7 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 " theme configuration
 set t_Co=256             " enable 256-color mode.
 set background=dark
+set termguicolors
 "colorscheme zenburn
 
 let s:uname = system("uname")
