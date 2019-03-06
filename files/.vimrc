@@ -80,7 +80,7 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 
 
 " theme configuration
-"set t_Co=256             " enable 256-color mode.
+set t_Co=256             " enable 256-color mode.
 set background=dark
 "colorscheme zenburn
 
@@ -94,7 +94,7 @@ if s:uname != "Darwin\n"
 	" let g:quantum_italics=1
 	" let g:airline_theme='quantum'
 endif
-colorscheme nord
+colorscheme iceberg
 
 " Search down into subfolders
 set path+=**
