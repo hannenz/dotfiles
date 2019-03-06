@@ -382,3 +382,4 @@ nnoremap ,doc :-1read $HOME/.vim/snippets/doc<CR>j$"%p3jA
 nnoremap ,html :-1read $HOME/.vim/snippets/html<CR>5jcit
 nnoremap ,ctl :new<CR>:-1read /home/hannenz/.vim/snippets/cmt_controller.php<CR>
 nnoremap ,mdl :new<CR>:-1read /home/hannenz/.vim/snippets/cmt_model.php<CR>
+nnoremap <Leader>v :vsplit<CR>
