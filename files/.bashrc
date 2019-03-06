@@ -8,8 +8,13 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
+# Don't know if this is a good idea but it 
+# makes colorscheme `iceberg` work in vim ;-)
+export TERM=xterm-256color
 
-##########
+
+
+#########
 #  PATH  #
 ##########
 
