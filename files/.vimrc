@@ -15,6 +15,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'arrufat/vala.vim'
 Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'pangloss/vim-javascript'
 
 
 " Plugins
