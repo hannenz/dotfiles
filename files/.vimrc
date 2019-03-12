@@ -7,8 +7,8 @@ call plug#begin()
 
 " Syntax
 Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-scripts/gtk-vim-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'plasticboy/vim-markdown'
@@ -217,7 +217,7 @@ nnoremap <silent> ]C :clast<CR>
 " Open entries of quick fix list in new tab
 " set switchbuf+=usetab,newtab
 
-au BufRead,BufNewFile *.scss set filetype=sass
+au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.s set filetype=asm_ca65
 
 
