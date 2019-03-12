@@ -258,8 +258,6 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 let g:netrw_banner = 0			" Disable banner of netrw
 let g:netrw_liststyle = 3 		" Tree view
 let g:netrw_winsize = -40 		" Window size
-"let g:netrw_altv = 1 			" 
-"let g:netrw_browse_split = 4 	" Open file in previous window
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
