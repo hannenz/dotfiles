@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle softwarre capslock mode
 Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
-
+Plug 'tpope/vim-vinegar'
 
 Plug 'tpope/vim-dadbod'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -225,7 +225,7 @@ au BufRead,BufNewFile *.s set filetype=asm_ca65
 let mapleader=' '
 
 nnoremap <Leader>g :Gstatus<CR>
-nnoremap <Leader>e :Expl<CR>
+nnoremap <Leader>e :Lexplore<CR>
 nnoremap <leader>m :!make<CR>
 nnoremap <Leader>l :ls<CR>
 " Reload a current browser-sync'ed tab
@@ -255,8 +255,11 @@ set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 " netrw
 " https://shapeshed.com/vim-netrw/
-let g:netrw_banner = 0		" Disable banner of netrw
-
+let g:netrw_banner = 0			" Disable banner of netrw
+let g:netrw_liststyle = 3 		" Tree view
+let g:netrw_winsize = -40 		" Window size
+"let g:netrw_altv = 1 			" 
+"let g:netrw_browse_split = 4 	" Open file in previous window
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
