@@ -23,7 +23,7 @@ Plug 'tpope/vim-fugitive' 		" git
 Plug 'tpope/vim-obsession' 		" Sessions
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle softwarre capslock mode
+Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
 Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'tpope/vim-vinegar'
@@ -385,3 +385,5 @@ nnoremap ,html :-1read $HOME/.vim/snippets/html<CR>5jcit
 nnoremap ,ctl :new<CR>:-1read /home/hannenz/.vim/snippets/cmt_controller.php<CR>
 nnoremap ,mdl :new<CR>:-1read /home/hannenz/.vim/snippets/cmt_model.php<CR>
 nnoremap <Leader>v :vsplit<CR>
+
+nnoremap <Leader><Leader> :Buffer<CR>
