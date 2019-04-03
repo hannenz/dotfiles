@@ -27,14 +27,16 @@ Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
 Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'tpope/vim-vinegar'
-
 Plug 'tpope/vim-dadbod'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
-
+Plug 'Lenovsky/Nuake' 			" Quake style terminal
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'noahfrederick/vim-skeleton'
