@@ -20,7 +20,7 @@ export TERM=xterm-256color
 
 # Set PATH
 
-PATH="/usr/local/bin:~/.local/bin:$PATH:~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/build"
+PATH="/usr/local/bin:~/.local/bin:$PATH:~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/build:$HOME/pebble-dev/pebble-sdk-4.5-linux64/bin"
 
 
 
@@ -282,3 +282,49 @@ fi
 
 
 export MYSQL_PWD=pebble
+command_not_found_handle () {
+	local INSULTS=(
+		"Boooo!"
+		"Don't you know anything?"
+		"RTFM!"
+		"Hahaha, n00b!"
+		"Wow! That was impressively wrong!"
+		"What are you doing??"
+		"Pathetic"
+		"...and this is the best you can do??"
+		"The worst one today!"
+		"n00b alert!"
+		"Your application for reduced salary has been sent!"
+		"lol"
+		"u suk"
+		"lol... plz"
+		"plz uninstall"
+		"And the Darwin Award goes to.... ${USER}!"
+		"ERROR_INCOMPETENT_USER"
+		"Incompetence is also competence"
+		"Bad."
+		"Fake it till you make it!"
+		"What is this...? Amateur hour!?"
+		"Come on! You can do it!"
+		"Nice try."
+		"What if... you type an actual command the next time!"
+		"What if I told you... it is possible to type valid commands."
+		"Y u no speak computer???"
+		"This is not Windows"
+		"Perhaps you should leave the command line alone..."
+		"Please step away from the keyboard!"
+		"error code: 1D10T"
+		"ACHTUNG! ALLES TURISTEN UND NONTEKNISCHEN LOOKENPEEPERS! DAS KOMPUTERMASCHINE IST NICHT FÜR DER GEFINGERPOKEN UND MITTENGRABEN! ODERWISE IST EASY TO SCHNAPPEN DER SPRINGENWERK, BLOWENFUSEN UND POPPENCORKEN MIT SPITZENSPARKEN. IST NICHT FÜR GEWERKEN BEI DUMMKOPFEN. DER RUBBERNECKEN SIGHTSEEREN KEEPEN DAS COTTONPICKEN HÄNDER IN DAS POCKETS MUSS. ZO RELAXEN UND WATSCHEN DER BLINKENLICHTEN."
+		"Pro tip: type a valid command!"
+	)
+	# Seed "random" generator
+	RANDOM=$(date +%s%N)
+	VALUE=$((${RANDOM}%1))
+	if [[ ${VALUE} -lt 1 ]]; then
+		printf "\n $(tput bold)$(tput setaf 1)$(shuf -n 1 -e "${INSULTS[@]}")$(tput sgr0)\n\n"
+	fi
+	echo "-bash: $1: command not found"
+
+	# Return the exit code normally returned on invalid command
+	return 127
+}
