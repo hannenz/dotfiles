@@ -23,6 +23,7 @@ Plug 'tpope/vim-fugitive' 		" git
 Plug 'tpope/vim-obsession' 		" Sessions
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
 Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
