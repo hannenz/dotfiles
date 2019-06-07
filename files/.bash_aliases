@@ -38,6 +38,7 @@ alias stylelint='stylelint --config /home/hannenz/.stylelintrc.json'
 alias tmx='tmux new-session \; split-window -h \; split-window -v \; resize-pane -t 2 -x 60 \; attach'
 alias less='less -r'
 alias cheat='cht.sh'
+alias hplayer='mplayer -idle -cache-min 7 http://hannenz.homelinux.org:8000'
 which bat > /dev/null && alias cat=bat 
 # alias vim='nvim'
 
