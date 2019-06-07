@@ -34,10 +34,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
-Plug 'Lenovsky/Nuake' 			" Quake style terminal
-nnoremap <F4> :Nuake<CR>
-inoremap <F4> <C-\><C-n>:Nuake<CR>
-tnoremap <F4> <C-\><C-n>:Nuake<CR>
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'noahfrederick/vim-skeleton'
