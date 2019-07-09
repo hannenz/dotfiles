@@ -246,7 +246,9 @@ map <Leader>w <Plug>ToggleMarkbar
 " Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
 
-nnoremap <Leader>a :ALENext<CR>
+" vim-unimpaired handles this with ]l, [l already!!
+" nnoremap <Leader>a :ALENext<CR>
+" nnoremap <Leader>A :ALEPrev<CR>
 
 
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
@@ -269,13 +271,13 @@ let g:UltiSnipsSnippetDirectories = [ 'UltiSnips', 'mysnippets' ]
 
 
 " ALE Options
-let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'bash': ['shell -n']}
+let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'css': ['stylelint'], 'sh': ['shellcheck']}
 let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint']}
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '-x'
 let g:ale_sign_warning = '-!'
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_save = 1
 
 
