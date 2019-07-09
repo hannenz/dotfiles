@@ -22,6 +22,7 @@ export TERM=xterm-256color
 
 PATH="/usr/local/bin:~/.local/bin:$PATH:~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/build:$HOME/pebble-dev/pebble-sdk-4.5-linux64/bin"
 
+export PASSWORD_STORE_DIR=/home/hannenz/Nextcloud/Johannes/password-store/
 
 
 
