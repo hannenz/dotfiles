@@ -280,6 +280,8 @@ let g:UltiSnipsSnippetDirectories = [ 'UltiSnips', 'mysnippets' ]
 " ALE Options
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'css': ['stylelint'], 'sh': ['shellcheck']}
 let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint'], 'scss': ['stylelint']}
+let g:ale_linters = {	'javascript':['prettier'], 'scss': ['stylelint'], 'css': ['stylelint'], 'sh': ['shellcheck']}
+let g:ale_fixers =  {	'javascript':['prettier'], 'scss': ['stylelint']}
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '-x'
 let g:ale_sign_warning = '-!'
