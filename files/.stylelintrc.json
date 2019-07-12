@@ -18,16 +18,6 @@
     	"block-opening-brace-space-before": "always",
     	"color-hex-case": "lower",
     	"comment-whitespace-inside": "always",
-    	"custom-property-empty-line-before": [ "always", {
-      		"except": [
-        		"after-custom-property",
-        		"first-nested"
-      		],
-      		"ignore": [
-        		"after-comment",
-        		"inside-single-line-block"
-      		]
-    	} ],
     	"declaration-bang-space-after": "never",
     	"declaration-bang-space-before": "always",
     	"declaration-block-semicolon-newline-after": "always-multi-line",
