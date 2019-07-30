@@ -2,6 +2,8 @@
 " Had to re-enable it since today I got a load full of E10 errors on startup: https://stackoverflow.com/a/18371495/1490536
 set nocompatible 
 
+let g:ale_completion_enabled = 1
+
 " Plugins via vim-plug
 call plug#begin()
 
@@ -48,7 +50,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 Plug 'vim-php/tagbar-phpctags.vim'
-" Plug 'joonty/vdebug'
+Plug 'joonty/vdebug'
 "Plug 'Yilin-Yang/vim-markbar'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 
@@ -263,6 +265,7 @@ let g:netrw_winsize = -40 		" Window size
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
+set diffopt=vertical " Always vertical diffs
 
 iabbrev </ </<C-X><C-O>
 
@@ -281,6 +284,7 @@ let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_save = 1
 nnoremap <Leader>f :ALEFix<CR>
+" set omnifunc=ale#completion#OmniFunc
 
 
 function! DoPrettyXML()
@@ -337,8 +341,8 @@ endif
 
 " Vdebug options (remote debugging with xdebug)
 let g:vdebug_options = { 
-            \ "path_maps" : {"/var/www/html": "/home/hannenz/html"},
-            \ "break_on_open": 0
+            \ "path_maps" : {"/var/www/html": "/home/hannenz/Sites"},
+            \ "break_on_open": 1
 \}
 
 
