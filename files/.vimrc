@@ -341,8 +341,6 @@ endif
 
 " Vdebug options (remote debugging with xdebug)
 let g:vdebug_options = { 
-            \ "path_maps" : {"/var/www/html": "/home/hannenz/Sites"},
-            \ "break_on_open": 1
 \}
 
 
