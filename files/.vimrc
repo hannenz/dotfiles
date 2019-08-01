@@ -27,7 +27,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
-Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
+"Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-dadbod'
@@ -246,8 +246,11 @@ nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
 nnoremap <Leader>b :Buffer<CR>
 map <Leader>w <Plug>ToggleMarkbar
 
-" Toggle Tagbar
+" Tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_left = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_compact = 1
 
 " vim-unimpaired handles this with ]l, [l already!!
 " nnoremap <Leader>a :ALENext<CR>
