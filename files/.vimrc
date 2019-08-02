@@ -269,7 +269,7 @@ let g:netrw_winsize = -40 		" Window size
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
-set diffopt=vertical " Always vertical diffs
+set diffopt=filler,vertical " Always vertical diffs
 
 iabbrev </ </<C-X><C-O>
 
