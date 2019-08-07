@@ -2,9 +2,6 @@
 " Had to re-enable it since today I got a load full of E10 errors on startup: https://stackoverflow.com/a/18371495/1490536
 set nocompatible 
 
-let g:ale_completion_enabled = 1
-nnoremap <Leader>f :ALEFix<CR>
-
 " Plugins via vim-plug
 call plug#begin()
 
@@ -20,7 +17,6 @@ Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
 
-
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
 Plug 'tpope/vim-obsession' 		" Sessions
@@ -28,7 +24,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
-"Plug 'tpope/vim-jdaddy'  		" JSON as text object (aj)
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-dadbod'
@@ -40,28 +35,22 @@ Plug 'xolox/vim-easytags'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
-" Plug 'noahfrederick/vim-skeleton'
-
+Plug 'joonty/vdebug'
 
 " Auto completion
 Plug 'ajh17/vimcompletesme'
-" Supertab allows use of tab for both autocomletion and snippets exapansion
-Plug 'ervandew/supertab'
+Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 Plug 'vim-php/tagbar-phpctags.vim'
-Plug 'joonty/vdebug'
-"Plug 'Yilin-Yang/vim-markbar'
-Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
-
 
 " Documentation, Help and Manuals
 "Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 Plug 'rhysd/devdocs.vim'
 Plug 'hobbestigrou/vimtips-fortune'
 Plug 'sjb/devhelp.vim'
-
+Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -82,23 +71,10 @@ filetype plugin indent on 	" filetype detection[ON] plugin[ON] indent[OFF]
 syntax enable 				" enable syntax highlighting (previously syntax on).
 
 
-
-" theme configuration
+" Theme Configuration
 set t_Co=256             " enable 256-color mode.
 set background=dark
 set termguicolors
-"colorscheme zenburn
-
-let s:uname = system("uname")
-if s:uname != "Darwin\n"
-	" set termguicolors
-	" Make true color work inside tmux
-	" (https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/)
-	" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	" let g:quantum_italics=1
-	" let g:airline_theme='quantum'
-endif
 colorscheme iceberg
 
 " Search down into subfolders
@@ -197,8 +173,10 @@ set foldmethod=manual
 
 " map 'jj' to ESC (exit insert mode)
 imap jj <Esc>
+imap kj <Esc>
 " Insert blank line in normal mode
 map <C-k> O<ESC>
+   
 
 " Pair it with Ctrl-k to delete a line (convenience for dd)
 map <C-j> "_dd
@@ -222,6 +200,7 @@ nnoremap <silent> ]C :clast<CR>
 
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.s set filetype=asm_ca65
+au BufRead,BufNewFile *.tpl set filetype=html
 
 
 " Mappings
@@ -269,7 +248,7 @@ let g:netrw_winsize = -40 		" Window size
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
-set diffopt=filler,vertical " Always vertical diffs
+set diffopt=filler,internal,vertical,algorithm:patience,indent-heuristic " Always vertical diffs
 
 iabbrev </ </<C-X><C-O>
 
@@ -278,9 +257,10 @@ iabbrev </ </<C-X><C-O>
 let g:UltiSnipsSnippetDirectories = [ 'UltiSnips', 'mysnippets' ]
 
 " ALE Options
+let g:ale_completion_enabled = 1
 let g:ale_css_stylelint_use_global = 0
 let g:ale_css_stylelint_executable = ''
-let g:ale_css_stylelint_options = '--config=/home/hannenz/.stylelintrc.json'
+let g:ale_css_stylelint_options = '--config=~/.stylelintrc.json'
 let g:ale_linters = {	'javascript':['prettier'], 'sass': ['stylelint'], 'css': ['stylelint'], 'sh': ['shellcheck']}
 let g:ale_fixers =  {	'javascript':['prettier'], 'sass': ['stylelint'], 'scss': ['stylelint']}
 let g:ale_linters = {	'javascript':['prettier'], 'scss': ['stylelint'], 'css': ['stylelint'], 'sh': ['shellcheck']}
@@ -340,7 +320,6 @@ endif
 match ErrorMsg '\%>120v.\+'
 match ErrorMsg '\s\+$'
 
-
 " Use ag over grep
 if executable ('ag')
 	set grepprg=ag\ --nogroup\ --nocolor
@@ -360,11 +339,6 @@ augroup my_indent_options
 	autocmd FileType * setlocal shiftwidth=4
 augroup END
 
-" Map K to devdocs for certain file types
-augroup plugin=devdocs
-	autocmd!
-	autocmd FileType php,scss,css,html,tpl,ctp,js nmap <buffer>K <Plug>(devdocs-under-cursor)
-augroup END
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0
 
@@ -375,11 +349,6 @@ augroup text_wrap
 	autocmd!
 	autocmd FileType txt,markdown, setlocal textwidth=70
 	autocmd FileType txt,markdown, setlocal formatoptions+=t
-augroup END
-
-augroup let_tpl_files_be_html
-	autocmd!
-	au BufRead,BufNewFile *.tpl set filetype=html
 augroup END
 
 augroup my_markdown
@@ -400,11 +369,5 @@ let g:easytags_async = 1
 
 " Helper for diff via FTP / Filezilla
 nnoremap <Leader>v :vertical diffsplit ~/Sites/
-
-nnoremap ,doc :-1read $HOME/.vim/snippets/doc<CR>j$"%p3jA
-nnoremap ,html :-1read $HOME/.vim/snippets/html<CR>5jcit
-nnoremap ,ctl :new<CR>:-1read /home/hannenz/.vim/snippets/cmt_controller.php<CR>
-nnoremap ,mdl :new<CR>:-1read /home/hannenz/.vim/snippets/cmt_model.php<CR>
 nnoremap <Leader>v :vsplit<CR>
-
 nnoremap <Leader><Leader> :Buffer<CR>
