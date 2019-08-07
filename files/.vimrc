@@ -377,6 +377,15 @@ augroup text_wrap
 	autocmd FileType txt,markdown, setlocal formatoptions+=t
 augroup END
 
+augroup let_tpl_files_be_html
+	autocmd!
+	au BufRead,BufNewFile *.tpl set filetype=html
+augroup END
+
+augroup my_markdown
+    autocmd!
+    autocmd FileType markdown nnoremap <F9> :<c-u>silent call system('pandoc -f markdown -t html -s -c '.expand('%:p:r:S').'.css -o '.expand('%:p:r:S').'.html '.expand('%:p:S'))<cr>
+augroup END
 
 nnoremap <leader>d ^i[✓] <Esc>df]
 nnoremap <leader>D ^i[ ] <Esc>df]
