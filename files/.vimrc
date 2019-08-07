@@ -110,22 +110,10 @@ set autoindent
 set previewheight=30
 set textwidth=80 			" text width to hard-fold (gq)
 
-" From https://www.reddit.com/r/vim/wiki/tabstop
-" set tabstop=8             " tab spacing
-" set softtabstop=4
-" set shiftwidth=4          " indent/outdent by 4 columns
-" set expandtab
-
 " To use tabs uncomment this
 set tabstop=4
 set noexpandtab
 set shiftwidth=4
-
-" set copyindent
-" set preserveindent
-"set softtabstop=4         " unify
-" set shiftround            " always indent/outdent to the nearest tabstop
-"set smarttab              " use tabs at the start of a line, spaces elsewhere
 
 set ignorecase			  " ignorecase must be set for smartcase to work -- wtf?
 set smartcase             " smartcase in search: case sensitive as soon as a capital letter is in the query
@@ -158,7 +146,38 @@ set backspace=indent,eol,start
 set exrc
 set secure
 
-set backspace=indent,eol,start
+set foldmethod=manual
+
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Autocommands / Filetypes ...
+
+au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.s set filetype=asm_ca65
+au BufRead,BufNewFile *.tpl set filetype=html
+
+" Override any filetype settings concerning tabs
+" https://www.reddit.com/r/vim/comments/7g4afp/using_tabs_only/
+augroup my_indent_options
+	autocmd!
+	autocmd FileType * setlocal noexpandtab
+	autocmd FileType * setlocal shiftwidth=4
+augroup END
+
+
+" Set a positive text width on text-based file types (txt, markdown...)
+" and enable auto wrap
+set formatoptions-=t
+augroup text_wrap
+	autocmd!
+	autocmd FileType txt,markdown, setlocal textwidth=70
+	autocmd FileType txt,markdown, setlocal formatoptions+=t
+augroup END
+
+augroup my_markdown
+    autocmd!
+    autocmd FileType markdown nnoremap <F9> :<c-u>silent call system('pandoc -f markdown -t html -s -c '.expand('%:p:r:S').'.css -o '.expand('%:p:r:S').'.html '.expand('%:p:S'))<cr>
+augroup END
 
 
 " Run shell commands as interactive shell (Read .bashrc, use aliases etc.)
@@ -166,45 +185,17 @@ set backspace=indent,eol,start
 " Better (https://superuser.com/a/646268/111493):
 let $BASH_ENV = "~/.bash_aliases"
 
-set foldmethod=manual
-
-
 " Key mappings
+
+let mapleader=' '
 
 " map 'jj' to ESC (exit insert mode)
 imap jj <Esc>
 imap kj <Esc>
-" Insert blank line in normal mode
-map <C-k> O<ESC>
-   
 
-" Pair it with Ctrl-k to delete a line (convenience for dd)
-map <C-j> "_dd
 " Save with C-s
 nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>a
-
-" Buffer list navigation
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-nnoremap <silent> [c :cprevious<CR>
-nnoremap <silent> ]c :cnext<CR>
-nnoremap <silent> [C :cfirst<CR>
-nnoremap <silent> ]C :clast<CR>
-
-
-" Open entries of quick fix list in new tab
-" set switchbuf+=usetab,newtab
-
-au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile *.s set filetype=asm_ca65
-au BufRead,BufNewFile *.tpl set filetype=html
-
-
-" Mappings
-let mapleader=' '
 
 nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>e :Lexplore<CR>
@@ -219,12 +210,8 @@ nnoremap <Leader>l :Lines<CR>
 nnoremap <silent> <C-p> :GFiles<CR>
 nnoremap <silent> <C-P> :Files<CR>
 
-" (Re-)run gulp in right pane
-nnoremap <Leader>p :!tmux send-keys -t 2 C-c C-m 'gulp' C-m<CR><CR>
-
 " List buffer and ready to select
 nnoremap <Leader>b :Buffer<CR>
-map <Leader>w <Plug>ToggleMarkbar
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -235,9 +222,6 @@ let g:tagbar_compact = 1
 " vim-unimpaired handles this with ]l, [l already!!
 " nnoremap <Leader>a :ALENext<CR>
 " nnoremap <Leader>A :ALEPrev<CR>
-
-
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 " netrw
@@ -329,32 +313,8 @@ endif
 let g:vdebug_options = { 
 \}
 
-
-nnoremap <leader>m :!make<CR>
-" Override any filetype settings concerning tabs
-" https://www.reddit.com/r/vim/comments/7g4afp/using_tabs_only/
-augroup my_indent_options
-	autocmd!
-	autocmd FileType * setlocal noexpandtab
-	autocmd FileType * setlocal shiftwidth=4
-augroup END
-
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0
-
-" Set a positive text width on text-based file types (txt, markdown...)
-" and enable auto wrap
-set formatoptions-=t
-augroup text_wrap
-	autocmd!
-	autocmd FileType txt,markdown, setlocal textwidth=70
-	autocmd FileType txt,markdown, setlocal formatoptions+=t
-augroup END
-
-augroup my_markdown
-    autocmd!
-    autocmd FileType markdown nnoremap <F9> :<c-u>silent call system('pandoc -f markdown -t html -s -c '.expand('%:p:r:S').'.css -o '.expand('%:p:r:S').'.html '.expand('%:p:S'))<cr>
-augroup END
 
 nnoremap <leader>d ^i[✓] <Esc>df]
 nnoremap <leader>D ^i[ ] <Esc>df]
