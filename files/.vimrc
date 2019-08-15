@@ -2,6 +2,10 @@
 " Had to re-enable it since today I got a load full of E10 errors on startup: https://stackoverflow.com/a/18371495/1490536
 set nocompatible 
 
+function! WhichOS() abort
+	return toupper(substitute(system('uname'), '\n', '', ''))
+endfunction
+
 " Plugins via vim-plug
 call plug#begin()
 
@@ -85,8 +89,6 @@ set wildmenu
 set nofoldenable 			" disable folding
 set number
 
-" Sane font for GVim / MacVim
-" set guifont=SourceCodePro-Regular:h14
 
 " Relative (hybrid) line numbers
 " set number relativenumber
@@ -331,3 +333,19 @@ let g:easytags_async = 1
 nnoremap <Leader>v :vertical diffsplit ~/Sites/
 nnoremap <Leader>v :vsplit<CR>
 nnoremap <Leader><Leader> :Buffer<CR>
+
+" vim-matchup: Enable parallel transmution (e.g. change closing XML Tag when
+" opening one is altered)
+let g_matchup_transmute_enabled = 1
+let g:matchup_transmute_enabled = 1
+let g:matchup_matchparen_enabled = 1
+let g:matchup_matchparen_deferred = 1 " Be more performant
+
+" MacVim Settings
+if (WhichOS() =~# 'DARWIN' && has('gui_running'))
+	" 2019-08-15: vim-matchparen somehow breaks MacVim unusable, so for the time
+	" being it is disabled there
+	let g:matchup_enabled = 0
+	" Sane font for GVim / MacVim
+	set guifont=SourceCodePro-Regular:h15
+endif
