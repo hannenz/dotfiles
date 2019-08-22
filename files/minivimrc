@@ -44,7 +44,14 @@ set backspace=indent,eol,start
 set foldmethod=manual
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 set formatoptions-=t
-set diffopt=filler,internal,vertical,algorithm:patience,indent-heuristic " Always vertical diffs
+" Sane line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
+if has('patch-8.1.360')
+	set diffopt=filler,internal,vertical,algorithm:patience,indent-heuristic " Always vertical diffs
+endif
 
 let mapleader=' '
 let g:netrw_banner = 0			" Disable banner of netrw
@@ -72,11 +79,6 @@ nnoremap <Leader><Leader> :Buffer<CR>
 
 
 iabbrev </ </<C-X><C-O>
-
-" Sane line joins
-if v:version > 703 || v:version == 703 && has('patch541')
-  set formatoptions+=j
-endif
 
 " highlight ugly code
 match ErrorMsg '\%>120v.\+'
