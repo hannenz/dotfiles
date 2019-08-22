@@ -1,0 +1,83 @@
+" minivimrc
+"
+" Minimal VIM configuration that does not depend on any 3rd party / plugins etc.
+" to drop into foreign boxes
+" based on my regular [.vimrc](https://github.com/hannenz/dotfiles/files/.vimrc)
+" as of 2019-08-22
+"
+set nocompatible 
+
+filetype plugin indent on 	" filetype detection[ON] plugin[ON] indent[OFF]
+syntax enable 				" enable syntax highlighting (previously syntax on).
+
+colorscheme desert
+
+set path+=**
+set wildmenu
+set number
+set hidden 				  " allows to change bufferfs even if there are unsaved changes
+set laststatus=2          " last window always has a statusline
+set nohlsearch            " Don't continue to highlight searched phrases.
+set incsearch             " But do highlight as you type your search.
+set ruler                 " Always show info along bottom.
+set autoindent
+set previewheight=30
+set textwidth=80 			" text width to hard-fold (gq)
+set tabstop=4
+set noexpandtab
+set shiftwidth=4
+set ignorecase			  " ignorecase must be set for smartcase to work -- wtf?
+set smartcase             " smartcase in search: case sensitive as soon as a capital letter is in the query
+set nowrap                " don't wrap text
+set wildmode=longest,list " Tab-completion like in bash
+set cursorline            " highlight current line
+set lazyredraw 				" Don't redraw the screen when executing macros etc.
+set splitright
+set splitbelow
+set autoread 				" Re-read file if it has been edited outside vim and not inside
+set scrolloff=1 			" Keep at least 1 line visible at top/bottom when scrolling
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+set timeout timeoutlen=5000 ttimeoutlen=100
+set backspace=indent,eol,start
+set foldmethod=manual
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+set formatoptions-=t
+set diffopt=filler,internal,vertical,algorithm:patience,indent-heuristic " Always vertical diffs
+
+let mapleader=' '
+let g:netrw_banner = 0			" Disable banner of netrw
+let g:netrw_liststyle = 3 		" Tree view
+let g:netrw_winsize = -40 		" Window size
+
+augroup my_indent_options
+	autocmd!
+	autocmd FileType * setlocal noexpandtab
+	autocmd FileType * setlocal shiftwidth=4
+augroup END
+augroup text_wrap
+	autocmd!
+	autocmd FileType txt,markdown, setlocal textwidth=70
+	autocmd FileType txt,markdown, setlocal formatoptions+=t
+augroup END
+imap jj <Esc>
+imap kj <Esc>
+nmap <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>a
+
+nnoremap <Leader>e :Lexplore<CR>
+nnoremap <Leader>b :Buffer<CR>
+nnoremap <Leader><Leader> :Buffer<CR>
+
+
+iabbrev </ </<C-X><C-O>
+
+" Sane line joins
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
+" highlight ugly code
+match ErrorMsg '\%>120v.\+'
+match ErrorMsg '\s\+$'
