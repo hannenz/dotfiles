@@ -42,7 +42,6 @@ endif
 set timeout timeoutlen=5000 ttimeoutlen=100
 set backspace=indent,eol,start
 set foldmethod=manual
-set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 set formatoptions-=t
 " Sane line joins
 if v:version > 703 || v:version == 703 && has('patch541')
