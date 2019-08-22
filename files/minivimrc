@@ -10,7 +10,7 @@ set nocompatible
 filetype plugin indent on 	" filetype detection[ON] plugin[ON] indent[OFF]
 syntax enable 				" enable syntax highlighting (previously syntax on).
 
-colorscheme desert
+colorscheme darkblue
 
 set path+=**
 set wildmenu
@@ -30,7 +30,6 @@ set ignorecase			  " ignorecase must be set for smartcase to work -- wtf?
 set smartcase             " smartcase in search: case sensitive as soon as a capital letter is in the query
 set nowrap                " don't wrap text
 set wildmode=longest,list " Tab-completion like in bash
-set cursorline            " highlight current line
 set lazyredraw 				" Don't redraw the screen when executing macros etc.
 set splitright
 set splitbelow
@@ -73,12 +72,7 @@ nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>a
 
 nnoremap <Leader>e :Lexplore<CR>
-nnoremap <Leader>b :Buffer<CR>
-nnoremap <Leader><Leader> :Buffer<CR>
-
+nnoremap <Leader>b :ls<CR>:b  
+nnoremap <Leader><Leader> :ls<CR>:b  
 
 iabbrev </ </<C-X><C-O>
-
-" highlight ugly code
-match ErrorMsg '\%>120v.\+'
-match ErrorMsg '\s\+$'
