@@ -58,6 +58,7 @@ Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'rakr/vim-one'
 Plug 'jnurmine/zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
@@ -76,10 +77,18 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 
 
 " Theme Configuration
-set t_Co=256             " enable 256-color mode.
-set background=dark
+" set t_Co=256             " enable 256-color mode.
 set termguicolors
-colorscheme iceberg
+
+" Colorscheme One
+colorscheme one
+set background=dark 		" must come after colorscheme!
+let g:one_allow_italics = 1
+highlight Comment cterm=italic
+set t_8b=[48;2;%lu;%lu;%lum
+set t_8f=[38;2;%lu;%lu;%lum
+" End colorscheme One
+
 
 " Search down into subfolders
 set path+=**
