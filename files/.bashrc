@@ -161,12 +161,22 @@ function fname () {
     fi
 }
 
+# Alias for fname
+function qf () {
+	fname "$@"
+}
+
 
 
 
 #Grep in files - searches recursively in all files for the given pattern
 function grif () {
-	grep -RHin "$@" *
+	if [ $# == 1 ] ; then
+		grep -RHin "$@" .
+	fi
+	if [ $# == 2 ] ; then
+		grep -RHin "$1" "$2"
+	fi
 }
 
 # »Save for web«-like image resize with imagemagick
@@ -334,3 +344,8 @@ command_not_found_handle () {
 	# Return the exit code normally returned on invalid command
 	return 127
 }
+
+
+
+# Launch tmux
+tmux attach-session -t tmux_base || tmux new-session -s tmux_base
