@@ -42,12 +42,10 @@ fi
 # Bash completion on osx (installed via homebrew)
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-
 # cheat.sh completion
 if [ -f ~/.cheat.sh.completion ] ; then
 	. ~/.cheat.sh.completion
 fi
-
 
 # Tab completion for hosts in .netrc (ftp hosts)
 function netrc_completion {
@@ -56,7 +54,6 @@ function netrc_completion {
 	done
 }
 # complete -F netrc_completion ftp ftpdiff
-
 
 
 # pass completion suggested by @d4ndo (#362)
@@ -94,7 +91,6 @@ bind -m vi-command ".":insert-last-argument
 # No ixoff (Allow vim to bind <C-s> to :w)
 bind -r '\C-s'
 stty -ixon
-
 
 
 #################
@@ -143,12 +139,10 @@ function mksqldump () {
 }
 
 
-
 # Lorem ipsum text to clipboard
 function clipsum () {
 	lipsum "$@" | tee /dev/tty | xclip
 }
-
 
 
 # Find files/dirs by name
@@ -161,12 +155,11 @@ function fname () {
     fi
 }
 
+
 # Alias for fname
 function qf () {
 	fname "$@"
 }
-
-
 
 
 #Grep in files - searches recursively in all files for the given pattern
@@ -189,8 +182,6 @@ function smartresize() {
 }
 
 
-
-
 # CD in a HALMA Job directory by Job ID
 function jcd  {
         id="${1#*_}"
@@ -202,10 +193,8 @@ function jcd  {
 }
 
 
-
 # fetch .gitignore from gitignore.io
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
 
 
 # Diff files over FTP
