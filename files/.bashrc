@@ -348,4 +348,5 @@ command_not_found_handle () {
 
 
 # Launch tmux
-tmux attach-session -t tmux_base || tmux new-session -s tmux_base
+[[ $- != *i* ]] && return 		# Check for shell being interactive
+[[ -z "$TMUX" ]] && ( tmux attach-session -t tmux_base || tmux new-session -s tmux_base )
