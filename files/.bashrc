@@ -284,19 +284,6 @@ if [ -e ~/liquidprompt/liquidprompt ] ; then
 fi
 
 
-
-##########
-#  TMUX  #
-##########
-
-# Start tmux (https://unix.stackexchange.com/a/113768)
-# Makes sure, that tmux exists, does not try to execute itself
-# if command -v tmux >/dev/null; then
-# 	[[ !  $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-# fi
-
-
-
 export MYSQL_PWD=pebble
 command_not_found_handle () {
 	local INSULTS=(
@@ -347,6 +334,13 @@ command_not_found_handle () {
 
 
 
-# Launch tmux
-[[ $- != *i* ]] && return 		# Check for shell being interactive
-[[ -z "$TMUX" ]] && ( tmux attach-session -t tmux_base || tmux new-session -s tmux_base )
+##########
+#  TMUX  #
+##########
+
+# Start tmux (@see https://unix.stackexchange.com/a/113768, https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login)
+# Makes sure, that tmux exists, does not try to execute itself
+if command -v tmux >/dev/null; then
+	[[ $- != *i* ]] && return 		# Check for shell being interactive
+	[[ -z "$TMUX" ]] && ( tmux attach-session -t tmux_base || tmux new-session -s tmux_base )
+fi
