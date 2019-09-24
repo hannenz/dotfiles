@@ -334,5 +334,5 @@ if command -v tmux >/dev/null; then
 	[[ -z "$TMUX" ]] && ( tmux attach-session -t tmux_base || tmux new-session -s tmux_base )
 fi
 
-export CDPATH=.:~/Sites
+export CDPATH=".:~/Sites"
 
