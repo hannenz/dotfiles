@@ -224,6 +224,9 @@ nnoremap <silent> <C-P> :Files<CR>
 " List buffer and ready to select
 nnoremap <Leader>b :Buffer<CR>
 
+" Undeline current line
+nnoremap <Leader>u yyp^v$r-
+
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
@@ -358,3 +361,12 @@ if (WhichOS() =~# 'DARWIN' && has('gui_running'))
 	" Sane font for GVim / MacVim
 	set guifont=SourceCodePro-Regular:h15
 endif
+
+" Sum up numbers of matches
+" https://vim.fandom.com/wiki/Sum_numbers
+let g:S = 0  "result in global variable S
+function! Sum(number)
+	let g:S = g:S + a:number
+	return a:number
+endfunction
+
