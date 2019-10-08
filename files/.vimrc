@@ -14,7 +14,7 @@ Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-scripts/gtk-vim-syntax'
-Plug 'RRethy/vim-hexokinase'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'plasticboy/vim-markdown'
 Plug 'arrufat/vala.vim'
 Plug 'maxbane/vim-asm_ca65'
