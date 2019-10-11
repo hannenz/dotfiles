@@ -215,6 +215,9 @@ nnoremap <Leader>l :ls<CR>
 " Reload a current browser-sync'ed tab
 nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
+" fzf settings
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 " fzf shortcuts
 nnoremap <Leader>f :GFiles<CR>
 nnoremap <Leader>l :Lines<CR>
