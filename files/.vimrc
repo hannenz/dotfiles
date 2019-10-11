@@ -249,7 +249,7 @@ let g:netrw_winsize = -40 		" Window size
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
-set diffopt=filler,internal,vertical,algorithm:patience,indent-heuristic " Always vertical diffs
+set diffopt=filler,internal,vertical
 
 iabbrev </ </<C-X><C-O>
 
