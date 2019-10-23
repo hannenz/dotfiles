@@ -373,3 +373,8 @@ function! Sum(number)
 	return a:number
 endfunction
 
+augroup plugin-devdocs
+  autocmd!
+  autocmd FileType php,css,scss,sass,js,javacsript nmap <buffer>K <Plug>(devdocs-under-cursor)
+augroup END
+

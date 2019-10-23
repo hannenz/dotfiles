@@ -24,6 +24,7 @@ case "$HOSTNAME" in
 		export PASSWORD_STORE_DIR=$HOME/Nextcloud/password-store/
 		;;
 	"sepp.local")
+		export PASSWORD_STORE_DIR=$HOME/Nextcloud3/password-store/
 		export PATH="/usr/local/php5/bin:$PATH"
 		;;
 esac
