@@ -10,19 +10,20 @@ endfunction
 call plug#begin()
 
 " Syntax
-Plug 'othree/html5.vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'vim-scripts/gtk-vim-syntax'
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'plasticboy/vim-markdown'
-Plug 'arrufat/vala.vim'
+Plug 'othree/html5.vim', { 'for': ['html', 'tpl']}
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['css', 'scss']}
+Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss']}
+Plug 'vim-scripts/gtk-vim-syntax', { 'for': ['c']}
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase', 'for': ['css', 'scss'] }
+Plug 'plasticboy/vim-markdown', { 'for': ['markdown']}
+Plug 'arrufat/vala.vim', {'for': ['vala']}
 Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
+Plug 'rhysd/git-messenger.vim' 		" git message history for given line
 Plug 'tpope/vim-obsession' 		" Sessions
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
@@ -54,7 +55,7 @@ Plug 'w0rp/ale'
 Plug 'rhysd/devdocs.vim'
 Plug 'hobbestigrou/vimtips-fortune'
 Plug 'sjb/devhelp.vim'
-Plug 'vim-scripts/PDV--phpDocumentor-for-Vim'
+Plug 'vim-scripts/PDV--phpDocumentor-for-Vim', {'for': ['php']}
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
