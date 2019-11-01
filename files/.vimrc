@@ -48,6 +48,8 @@ Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'vim-scripts/html_FileCompletion'
 " Plug 'majutsushi/tagbar'
 " Plug 'vim-php/tagbar-phpctags.vim'
 
@@ -380,3 +382,19 @@ augroup plugin-devdocs
   autocmd FileType php,css,scss,sass,js,javacsript nmap <buffer>K <Plug>(devdocs-under-cursor)
 augroup END
 
+augroup htmlFileCompletion
+	autocmd!
+	autocmd FileType html let b:basedir=FindProjectRoot('.gitignore')
+augroup END
+
+function! FindProjectRoot(lookFor)
+	let pathMaker='%:p'
+	while(len(expand(pathMaker))>1)
+		let pathMaker=pathMaker.':h'
+		let fileToCheck=expand(pathMaker).'/'.a:lookFor
+		if filereadable(fileToCheck)||isdirectory(fileToCheck)
+			return expand(pathMaker)
+		endif
+	endwhile
+	return 0
+endfunction
