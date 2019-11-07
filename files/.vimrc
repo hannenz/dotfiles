@@ -386,7 +386,7 @@ augroup END
 
 augroup htmlFileCompletion
 	autocmd!
-	autocmd FileType html let b:basedir=FindProjectRoot('.gitignore')
+	autocmd FileType html,css,scss,sass,js,javascript,php let b:basedir=FindProjectRoot('.gitignore')
 augroup END
 
 function! FindProjectRoot(lookFor)
