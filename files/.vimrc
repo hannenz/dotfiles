@@ -255,7 +255,7 @@ let g:netrw_winsize = -40 		" Window size
 
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
-set diffopt=filler,internal,vertical
+set diffopt=filler,vertical
 
 iabbrev </ </<C-X><C-O>
 
