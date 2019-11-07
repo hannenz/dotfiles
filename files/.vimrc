@@ -42,6 +42,8 @@ Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
 " Plug 'joonty/vdebug'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'joonty/vdebug'
+Plug 'vim-scripts/CSSMinister'
 
 " Auto completion
 Plug 'ajh17/vimcompletesme'
