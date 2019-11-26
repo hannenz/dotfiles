@@ -401,7 +401,3 @@ function! FindProjectRoot(lookFor)
 	return 0
 endfunction
 
-augroup cssdebug
-	autocmd!
-	autocmd FileType css,scss,sass nnoremap <Leader>1 ooutline: 1px dashed hotpink;<ESC>
-augroup END
