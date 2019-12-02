@@ -39,6 +39,7 @@ alias tmx='tmux new-session \; split-window -h \; split-window -v \; resize-pane
 alias less='less -r'
 alias cheat='cht.sh'
 alias hplayer='mplayer -idle -cache-min 7 http://hannenz.homelinux.org:8000'
+alias ssh='TERM=screen ssh'
 which bat > /dev/null && alias cat=bat 
 # alias vim='nvim'
 
