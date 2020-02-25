@@ -31,3 +31,5 @@ find ${DOTFILES_DIR} -type f  | while read file ; do
     echo "Installing file: ${DESTFILE}"
     ln -sf "${file}" "${DESTFILE}"
 done
+
+tic ~/tmux-256color
