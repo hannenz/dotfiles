@@ -32,4 +32,5 @@ find ${DOTFILES_DIR} -type f  | while read file ; do
     ln -sf "${file}" "${DESTFILE}"
 done
 
-tic ~/tmux-256color
+which tic > /dev/null && tic ~/tmux-256color
+which gsettings > /dev/null && gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
