@@ -37,7 +37,7 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-abolish' 		" Coerce cases (e.g. transform snake_case to camelCase etc; the plugin has other functions too)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -62,6 +62,15 @@ Plug 'rhysd/devdocs.vim'
 Plug 'hobbestigrou/vimtips-fortune'
 Plug 'sjb/devhelp.vim'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim', {'for': ['php']}
+
+" Damian Conway plugins
+Plug 'nixon/vim-vmath'
+vmap <expr> ++ VMATH_YankAndAnalyse()
+nmap ++ vip++
+Plug 'atweiden/vim-hudigraphs'
+inoremap <expr>  <C-K>   HUDG_GetDigraph() 
+
+
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -236,7 +245,7 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf settings
-" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } 
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " fzf shortcuts
@@ -244,11 +253,12 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " nnoremap <Leader>l :Lines<CR>
 " nnoremap <silent> <C-p> :GFiles<CR>
 nnoremap <silent> <C-P> :Files<CR>
-
 " List buffer and ready to select
 nnoremap <Leader>b :Buffer<CR>
 
-" Undeline current line
+
+
+" Underline current line
 nnoremap <Leader>u yyp^v$r-
 
 " Tagbar
