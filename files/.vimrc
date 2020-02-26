@@ -1,10 +1,11 @@
 " Don't set nocompatible! (https://www.reddit.com/r/vim/wiki/vimrctips)
 " Had to re-enable it since today I got a load full of E10 errors on startup: https://stackoverflow.com/a/18371495/1490536
-set nocompatible 
+" set nocompatible 
 
 function! WhichOS() abort
 	return toupper(substitute(system('uname'), '\n', '', ''))
 endfunction
+
 
 " Plugins via vim-plug
 call plug#begin()
@@ -42,7 +43,7 @@ Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
 " Plug 'joonty/vdebug'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
-Plug 'joonty/vdebug'
+" Plug 'joonty/vdebug'
 Plug 'vim-scripts/CSSMinister'
 " Plug 'psliwka/vim-smoothie'
 
@@ -223,12 +224,13 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf settings
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " fzf shortcuts
-nnoremap <Leader>f :GFiles<CR>
-nnoremap <Leader>l :Lines<CR>
-nnoremap <silent> <C-p> :GFiles<CR>
+" nnoremap <Leader>f :GFiles<CR>
+" nnoremap <Leader>l :Lines<CR>
+" nnoremap <silent> <C-p> :GFiles<CR>
 nnoremap <silent> <C-P> :Files<CR>
 
 " List buffer and ready to select
@@ -334,8 +336,8 @@ if executable ('ag')
 endif
 
 " Vdebug options (remote debugging with xdebug)
-let g:vdebug_options = { 
-\}
+" let g:vdebug_options = { 
+" \}
 
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0

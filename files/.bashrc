@@ -18,7 +18,7 @@ PATH="/usr/local/bin:$HOME/.local/bin:$PATH:~/.vim/plugged/tagbar-phpctags.vim/b
 
 case "$HOSTNAME" in
 	"calvin")
-		export PASSWORD_STORE_DIR=$HOME/Nextcloud/Johannes/password-store/
+		export PASSWORD_STORE_DIR=$HOME/Nextcloud/password-store/
 		;;
 	"t440s")
 		export PASSWORD_STORE_DIR=$HOME/Nextcloud/password-store/
