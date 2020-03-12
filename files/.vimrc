@@ -24,6 +24,7 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
+Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim' 		" git message history for given line
 Plug 'tpope/vim-obsession' 		" Sessions
 Plug 'tpope/vim-unimpaired'
