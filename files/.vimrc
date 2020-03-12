@@ -405,3 +405,5 @@ function! FindProjectRoot(lookFor)
 	return 0
 endfunction
 
+nnoremap <Leader>y :!tmux send-keys -t right C-[ C-p:  C-m <CR><CR>
+
