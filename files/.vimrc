@@ -24,7 +24,7 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'rhysd/git-messenger.vim' 		" git message history for given line
 Plug 'tpope/vim-obsession' 		" Sessions
 Plug 'tpope/vim-unimpaired'
@@ -42,11 +42,12 @@ Plug 'xolox/vim-misc'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
-" Plug 'joonty/vdebug'
+Plug 'joonty/vdebug'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 " Plug 'joonty/vdebug'
 Plug 'vim-scripts/CSSMinister'
 " Plug 'psliwka/vim-smoothie'
+Plug 'qpkorr/vim-bufkill'
 
 " Auto completion
 Plug 'ajh17/vimcompletesme'
@@ -407,3 +408,4 @@ endfunction
 
 nnoremap <Leader>y :!tmux send-keys -t right C-[ C-p:  C-m <CR><CR>
 
+let g:signify_sign_change = '~'
