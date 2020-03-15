@@ -38,29 +38,23 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-easytags'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
 Plug 'joonty/vdebug'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
-" Plug 'joonty/vdebug'
 Plug 'vim-scripts/CSSMinister'
 " Plug 'psliwka/vim-smoothie'
 Plug 'qpkorr/vim-bufkill'
 
-" Auto completion
 Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
 Plug 'tomtom/tcomment_vim'
 Plug 'w0rp/ale'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-scripts/html_FileCompletion'
-" Plug 'majutsushi/tagbar'
-" Plug 'vim-php/tagbar-phpctags.vim'
 
 " Documentation, Help and Manuals
-"Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 Plug 'rhysd/devdocs.vim'
 Plug 'hobbestigrou/vimtips-fortune'
 Plug 'sjb/devhelp.vim'
@@ -79,6 +73,12 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/wombat'
 Plug 'cocopon/iceberg.vim'
 
+" Disabled
+" Plug 'joonty/vdebug'
+" Plug 'psliwka/vim-smoothie'
+" Plug 'majutsushi/tagbar'
+" Plug 'vim-php/tagbar-phpctags.vim'
+"Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 call plug#end()
 
 
