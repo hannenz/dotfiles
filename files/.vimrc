@@ -46,6 +46,7 @@ Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'vim-scripts/CSSMinister'
 " Plug 'psliwka/vim-smoothie'
 Plug 'qpkorr/vim-bufkill'
+let g:BufKillCreateMappings = 0
 
 Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
@@ -409,3 +410,4 @@ endfunction
 nnoremap <Leader>y :!tmux send-keys -t right C-[ C-p:  C-m <CR><CR>
 
 let g:signify_sign_change = '~'
+nnoremap <Leader>w :BD<CR>
