@@ -233,7 +233,7 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf settings
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } 
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " fzf shortcuts
@@ -412,8 +412,6 @@ function! FindProjectRoot(lookFor)
 	endwhile
 	return 0
 endfunction
-
-nnoremap <Leader>y :!tmux send-keys -t right C-[ C-p:  C-m <CR><CR>
 
 let g:signify_sign_change = '~'
 nnoremap <Leader>w :BD<CR>
