@@ -47,6 +47,7 @@ Plug 'vim-scripts/CSSMinister'
 " Plug 'psliwka/vim-smoothie'
 Plug 'qpkorr/vim-bufkill'
 let g:BufKillCreateMappings = 0
+Plug 'chrisbra/Recover.vim'
 
 Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
@@ -171,6 +172,11 @@ set secure
 set foldmethod=manual
 
 set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Make ctrl-u and ctrl-w in insert mode undu-able (when invoked accidentally)
+" from: https://vim.fandom.com/wiki/Recover_from_accidental_Ctrl-U
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
 
 " Autocommands / Filetypes ...
 
@@ -411,3 +417,5 @@ nnoremap <Leader>y :!tmux send-keys -t right C-[ C-p:  C-m <CR><CR>
 
 let g:signify_sign_change = '~'
 nnoremap <Leader>w :BD<CR>
+
+:autocmd InsertEnter,InsertLeave * set cul!
