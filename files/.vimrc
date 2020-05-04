@@ -199,7 +199,9 @@ set formatoptions-=t
 augroup text_wrap
 	autocmd!
 	autocmd FileType txt,markdown, setlocal textwidth=70
-	autocmd FileType txt,markdown, setlocal formatoptions+=t
+	autocmd FileType txt,markdown, setlocal formatoptions+=tn
+	" Recognise [ ] and friends as list (for formatting with gqq etc)
+	autocmd FileType txt,markdown setlocal formatlistpat+=\\\|^\\s*\\[.\\]\\s\\+
 augroup END
 
 augroup my_markdown
@@ -419,7 +421,4 @@ nnoremap <Leader>w :BD<CR>
 :autocmd InsertEnter,InsertLeave * set cul!
 
 
-" Recognise [ ] and friends as list (for formatting with gqq etc)
-set formatoptions+=n
-set formatlistpat+=\\\|^\\s*\\[.\\]\\s\\+
 
