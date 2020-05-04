@@ -417,3 +417,9 @@ let g:signify_sign_change = '~'
 nnoremap <Leader>w :BD<CR>
 
 :autocmd InsertEnter,InsertLeave * set cul!
+
+
+" Recognise [ ] and friends as list (for formatting with gqq etc)
+set formatoptions+=n
+set formatlistpat+=\\\|^\\s*\\[.\\]\\s\\+
+
