@@ -422,4 +422,9 @@ nnoremap <Leader>w :BD<CR>
 :autocmd InsertEnter,InsertLeave * set cul!
 
 
+augroup vala-meson
+	autocmd!
+	autocmd FileType vala nnoremap <Leader>c :!cd build; ninja<CR>
+	autocmd FileType vala nnoremap <Leader>x :!./run.sh<CR><CR>
+augroup END
 
