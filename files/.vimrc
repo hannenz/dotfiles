@@ -428,3 +428,9 @@ augroup vala-meson
 	autocmd FileType vala nnoremap <Leader>x :!./run.sh<CR><CR>
 augroup END
 
+" Increment / Decrement more intuitive
+nnoremap + <C-a>
+nnoremap - <C-x>
+vnoremap + g<C-a>
+vnoremap - g<C-x>
+
