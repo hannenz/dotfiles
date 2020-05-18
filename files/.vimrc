@@ -348,8 +348,9 @@ if executable ('ag')
 endif
 
 " Vdebug options (remote debugging with xdebug)
-" let g:vdebug_options = { 
-" \}
+let g:vdebug_options = {
+\ 		'break_on_open' : 0
+\} 
 
 " Disable vim tips ("fortunes") fot the time being...
 let g:fortune_vimtips_auto_display = 0
