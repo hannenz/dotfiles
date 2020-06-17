@@ -49,6 +49,7 @@ Plug 'vim-scripts/CSSMinister'
 Plug 'qpkorr/vim-bufkill'
 let g:BufKillCreateMappings = 0
 Plug 'chrisbra/Recover.vim'
+Plug 'pechorin/any-jump.vim'
 
 Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
@@ -67,8 +68,8 @@ Plug 'vim-scripts/PDV--phpDocumentor-for-Vim', {'for': ['php']}
 Plug 'nixon/vim-vmath'
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
-Plug 'atweiden/vim-hudigraphs'
-inoremap <expr>  <C-K>   HUDG_GetDigraph() 
+" Plug 'atweiden/vim-hudigraphs'
+" inoremap <expr>  <C-K>   HUDG_GetDigraph() 
 
 
 
@@ -245,7 +246,7 @@ nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf settings
-" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " fzf shortcuts
