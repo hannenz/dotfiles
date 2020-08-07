@@ -33,23 +33,18 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-abolish' 		" Coerce cases (e.g. transform snake_case to camelCase etc; the plugin has other functions too)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
 Plug 'joonty/vdebug'
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'vim-scripts/CSSMinister'
-" Plug 'psliwka/vim-smoothie'
+
 Plug 'qpkorr/vim-bufkill'
 let g:BufKillCreateMappings = 0
-Plug 'chrisbra/Recover.vim'
-Plug 'pechorin/any-jump.vim'
 
 Plug 'ajh17/vimcompletesme'
 Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
@@ -60,7 +55,6 @@ Plug 'vim-scripts/html_FileCompletion'
 
 " Documentation, Help and Manuals
 Plug 'rhysd/devdocs.vim'
-Plug 'hobbestigrou/vimtips-fortune'
 Plug 'sjb/devhelp.vim'
 Plug 'vim-scripts/PDV--phpDocumentor-for-Vim', {'for': ['php']}
 
