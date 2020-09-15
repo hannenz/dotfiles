@@ -42,6 +42,7 @@ Plug 'honza/vim-snippets'
 Plug 'andymass/vim-matchup'
 Plug 'joonty/vdebug'
 Plug 'vim-scripts/CSSMinister'
+Plug 'h3xx/vim-expand-region'
 
 Plug 'qpkorr/vim-bufkill'
 let g:BufKillCreateMappings = 0
@@ -440,3 +441,8 @@ nnoremap - <C-x>
 vnoremap + g<C-a>
 vnoremap - g<C-x>
 
+nnoremap <Leader>* :Ggrep --untracked <cword><CR><CR>
+
+
+map v <Plug>(expand_region_expand)
+map <c-v> <Plug>(expand_region_shrink)
