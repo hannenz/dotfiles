@@ -243,7 +243,7 @@ function plankctl() {
 
 
 function mkwritable () {
-	sudo chown -R hannenz:www-data $1
+	sudo chown -R ${USER}:www-data $1
 	chmod -R g+w $1
 }
 
