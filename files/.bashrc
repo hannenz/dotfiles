@@ -29,7 +29,8 @@ case "$HOSTNAME" in
 		;;
 esac
 
-
+export PATH=$PATH:/opt/crosspi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/
+export PATH=$PATH:/opt/crosspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/
 
 
 ################

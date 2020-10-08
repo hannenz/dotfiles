@@ -365,8 +365,12 @@ nnoremap <leader>d ^i[✓] <Esc>df]
 nnoremap <leader>D ^i[ ] <Esc>df]
 
 " Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+inoremap <c-j> <ESC>:m .+1<CR>==gi
+inoremap <c-k> <ESC>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
 
 let g:easytags_cmd = '~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
 let g:easytags_autorecures = 1
