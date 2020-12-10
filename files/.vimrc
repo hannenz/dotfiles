@@ -80,13 +80,14 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/wombat'
 Plug 'cocopon/iceberg.vim'
+Plug 'jsit/toast.vim'
+Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
 " Disabled
-" Plug 'joonty/vdebug'
 " Plug 'psliwka/vim-smoothie'
-" Plug 'majutsushi/tagbar'
-" Plug 'vim-php/tagbar-phpctags.vim'
-"Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
+Plug 'majutsushi/tagbar'
+" Plug 'vim-php/tagbar-phpctags.vim' Not maintained anymore 2020-11-02
+Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 call plug#end()
 
 
@@ -99,7 +100,7 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 set termguicolors
 
 " Colorscheme One
-colorscheme one
+colorscheme gruvbox
 set background=dark 		" must come after colorscheme!
 let g:one_allow_italics = 1
 highlight Comment cterm=italic
@@ -367,14 +368,14 @@ nnoremap <leader>D ^i[ ] <Esc>df]
 " Move visual block
 nnoremap <c-j> :m .+1<CR>==
 nnoremap <c-k> :m .-2<CR>==
-inoremap <c-j> <ESC>:m .+1<CR>==gi
-inoremap <c-k> <ESC>:m .-2<CR>==gi
+" inoremap <c-j> <ESC>:m .+1<CR>==gi
+" inoremap <c-k> <ESC>:m .-2<CR>==gi
 vnoremap <c-j> :m '>+1<CR>gv=gv
 vnoremap <c-k> :m '<-2<CR>gv=gv
 
-let g:easytags_cmd = '~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
-let g:easytags_autorecures = 1
-let g:easytags_async = 1
+" let g:easytags_cmd = '~/.vim/plugged/tagbar-phpctags.vim/build/phpctags-0.5.1/phpctags'
+" let g:easytags_autorecures = 1
+" let g:easytags_async = 1
 
 " Helper for diff via FTP / Filezilla
 nnoremap <Leader>v :vertical diffsplit ~/Sites/
@@ -447,6 +448,9 @@ vnoremap - g<C-x>
 
 nnoremap <Leader>* :Ggrep --untracked <cword><CR><CR>
 
+" Visually mark insert mode by highlighting line numbers in a different color
+autocmd InsertEnter * hi  clear LineNr | hi LineNr ctermfg=yellow
+autocmd InsertLeave * hi  clear LineNr | hi LineNr ctermfg=darkgray
 
-map v <Plug>(expand_region_expand)
-map <c-v> <Plug>(expand_region_shrink)
+" Update tags file when saving PHP file
+" au BufWritePost *.php silent! !eval 'ctags' &
