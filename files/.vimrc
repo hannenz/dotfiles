@@ -66,17 +66,24 @@ nmap ++ vip++
 " Plug 'atweiden/vim-hudigraphs'
 " inoremap <expr>  <C-K>   HUDG_GetDigraph() 
 
+" Eyecandy
+
+Plug 'itchyny/lightline.vim'
+let g:lightline = {
+			\ 'colorscheme': 'one dark'
+			\}
 
 Plug 'itchyny/lightline.vim'
 
 " Colorschemes
-" Plug 'tyrannicaltoucan/vim-quantum'
-" Plug 'rakr/vim-one'
-" Plug 'jnurmine/zenburn'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'sickill/vim-monokai'
-" Plug 'fenetikm/falcon'
-" Plug 'nightsense/carbonized'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'rakr/vim-one'
+Plug 'Siphalor/vim-atomified'
+Plug 'jnurmine/zenburn'
+Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'
+Plug 'fenetikm/falcon'
+Plug 'nightsense/carbonized'
 Plug 'arcticicestudio/nord-vim'
 " Plug 'vim-scripts/wombat'
 " Plug 'cocopon/iceberg.vim'
@@ -100,6 +107,7 @@ set termguicolors
 
 " Colorscheme One
 colorscheme nord
+" colorscheme gruvbox
 set background=dark 		" must come after colorscheme!
 let g:one_allow_italics = 1
 highlight Comment cterm=italic
@@ -457,8 +465,8 @@ vnoremap - g<C-x>
 nnoremap <Leader>* :Ggrep --untracked <cword><CR><CR>
 
 " Visually mark insert mode by highlighting line numbers in a different color
-autocmd InsertEnter * hi  clear LineNr | hi LineNr ctermfg=yellow
-autocmd InsertLeave * hi  clear LineNr | hi LineNr ctermfg=darkgray
+" autocmd InsertEnter * hi  clear LineNr | hi LineNr ctermfg=yellow
+" autocmd InsertLeave * hi  clear LineNr | hi LineNr ctermfg=darkgray
 
 " Update tags file when saving PHP file
 " au BufWritePost *.php silent! !eval 'ctags' &
