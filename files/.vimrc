@@ -67,27 +67,26 @@ nmap ++ vip++
 " inoremap <expr>  <C-K>   HUDG_GetDigraph() 
 
 
+Plug 'itchyny/lightline.vim'
 
 " Colorschemes
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'rakr/vim-one'
-Plug 'jnurmine/zenburn'
-Plug 'altercation/vim-colors-solarized'
-Plug 'sickill/vim-monokai'
-Plug 'fenetikm/falcon'
-Plug 'nightsense/carbonized'
+" Plug 'tyrannicaltoucan/vim-quantum'
+" Plug 'rakr/vim-one'
+" Plug 'jnurmine/zenburn'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'sickill/vim-monokai'
+" Plug 'fenetikm/falcon'
+" Plug 'nightsense/carbonized'
 Plug 'arcticicestudio/nord-vim'
+" Plug 'vim-scripts/wombat'
+" Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
-Plug 'vim-scripts/wombat'
-Plug 'cocopon/iceberg.vim'
-Plug 'jsit/toast.vim'
-Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
 " Disabled
 " Plug 'psliwka/vim-smoothie'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " Plug 'vim-php/tagbar-phpctags.vim' Not maintained anymore 2020-11-02
-Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
+" Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 call plug#end()
 
 
@@ -100,7 +99,7 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 set termguicolors
 
 " Colorscheme One
-colorscheme gruvbox
+colorscheme nord
 set background=dark 		" must come after colorscheme!
 let g:one_allow_italics = 1
 highlight Comment cterm=italic
@@ -190,6 +189,7 @@ inoremap <c-w> <c-g>u<c-w>
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.s set filetype=asm_ca65
 au BufRead,BufNewFile *.tpl set filetype=html
+au BufRead,BufNewFile *.mjml set filetype=html
 
 " Override any filetype settings concerning tabs
 " https://www.reddit.com/r/vim/comments/7g4afp/using_tabs_only/
@@ -216,6 +216,12 @@ augroup my_markdown
     autocmd FileType markdown nnoremap <F9> :<c-u>silent call system('pandoc -f markdown -t html -s -c '.expand('%:p:r:S').'.css -o '.expand('%:p:r:S').'.html '.expand('%:p:S'))<cr>
 augroup END
 
+" Compile MJML
+augroup mjml
+	autocmd!
+	autocmd BufWritePost *.mjml !mjml --config.validationLevel=strict -o %:r.html %
+	autocmd BufRead,BufNewFile *.mjml nnoremap <F9> :!mjml --config.validationLevel=strict % -s \| neomutt -e "set content_type=text/html" -s "TEST E-Mail" j.braun@agentur-halma.de
+augroup END
 
 " Run shell commands as interactive shell (Read .bashrc, use aliases etc.)
 " set shellcmdflag=-ic
@@ -439,6 +445,8 @@ augroup vala-meson
 	autocmd FileType vala nnoremap <Leader>c :!cd build; ninja<CR>
 	autocmd FileType vala nnoremap <Leader>x :!./run.sh<CR><CR>
 augroup END
+
+
 
 " Increment / Decrement more intuitive
 nnoremap + <C-a>

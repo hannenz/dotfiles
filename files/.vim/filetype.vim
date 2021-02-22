@@ -4,6 +4,7 @@ if exists("did_load_filetypes")
 endif
 augroup filetypedetect
 	au! BufRead,BufNewFile *.tpl		setfiletype html
+	au! BufRead,BufNewFile *.mjml		setfiletype html
 augroup END
 
 

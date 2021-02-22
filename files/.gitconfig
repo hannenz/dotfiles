@@ -5,6 +5,7 @@
 	default = simple
 [core]
 	excludesfile = ~/.gitignore_global
+	fileMode = false
 [alias]
 	tree = log --decorate --pretty=oneline --abbrev-commit --graph
 	l1 = log --oneline
