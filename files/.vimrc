@@ -70,7 +70,7 @@ nmap ++ vip++
 
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
-			\ 'colorscheme': 'one dark'
+			\ 'colorscheme': 'nord'
 			\}
 
 Plug 'itchyny/lightline.vim'
