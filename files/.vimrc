@@ -69,11 +69,6 @@ nmap ++ vip++
 " Eyecandy
 
 Plug 'itchyny/lightline.vim'
-let g:lightline = {
-			\ 'colorscheme': 'nord'
-			\}
-
-Plug 'itchyny/lightline.vim'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -470,3 +465,27 @@ nnoremap <Leader>* :Ggrep --untracked <cword><CR><CR>
 
 " Update tags file when saving PHP file
 " au BufWritePost *.php silent! !eval 'ctags' &
+
+
+" Lightline configuration
+let g:lightline = {
+		\ 'colorscheme': 'nord',
+		\ 'active': {
+		\ 	'left': [ 	[ 'mode', 'paste' ],
+		\ 				['gitbranch', 'readonly', 'filename', 'modified' ]	],
+		\ 	},
+		\ 	'component_function': {
+		\ 		'gitbranch': 'FugitiveHead',
+		\ 		'filename': 'LightlineFilename'
+		\ 	}
+		\}
+
+" Needed for lightline relative path to project (git)
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
