@@ -36,6 +36,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-abolish' 		" Coerce cases (e.g. transform snake_case to camelCase etc; the plugin has other functions too)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'xolox/vim-misc'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -83,6 +84,7 @@ Plug 'arcticicestudio/nord-vim'
 " Plug 'vim-scripts/wombat'
 " Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
+Plug 'Luxed/ayu-vim'
 
 " Disabled
 " Plug 'psliwka/vim-smoothie'
@@ -101,9 +103,10 @@ syntax enable 				" enable syntax highlighting (previously syntax on).
 set termguicolors
 
 " Colorscheme One
-colorscheme nord
 " colorscheme gruvbox
 set background=dark 		" must come after colorscheme!
+colorscheme nord
+
 let g:one_allow_italics = 1
 highlight Comment cterm=italic
 set t_8b=[48;2;%lu;%lu;%lum
