@@ -70,6 +70,18 @@ nmap ++ vip++
 " Eyecandy
 
 Plug 'itchyny/lightline.vim'
+" Lightline configuration
+let g:lightline = {
+		\ 'colorscheme': 'ThemerVimLightline',
+		\ 'active': {
+		\ 	'left': [ 	[ 'mode', 'paste' ],
+		\ 				['gitbranch', 'readonly', 'filename', 'modified' ]	],
+		\ 	},
+		\ 	'component_function': {
+		\ 		'gitbranch': 'FugitiveHead',
+		\ 		'filename': 'LightlineFilename'
+		\ 	}
+		\}
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -470,18 +482,6 @@ nnoremap <Leader>* :Ggrep --untracked <cword><CR><CR>
 " au BufWritePost *.php silent! !eval 'ctags' &
 
 
-" Lightline configuration
-let g:lightline = {
-		\ 'colorscheme': 'one',
-		\ 'active': {
-		\ 	'left': [ 	[ 'mode', 'paste' ],
-		\ 				['gitbranch', 'readonly', 'filename', 'modified' ]	],
-		\ 	},
-		\ 	'component_function': {
-		\ 		'gitbranch': 'FugitiveHead',
-		\ 		'filename': 'LightlineFilename'
-		\ 	}
-		\}
 
 " Needed for lightline relative path to project (git)
 function! LightlineFilename()
@@ -491,3 +491,4 @@ function! LightlineFilename()
     return path[len(root)+1:]
   endif
   return expand('%')
+endfunction
