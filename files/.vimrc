@@ -65,7 +65,7 @@ Plug 'nixon/vim-vmath'
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
 " Plug 'atweiden/vim-hudigraphs'
-" inoremap <expr>  <C-K>   HUDG_GetDigraph() 
+" inoremap <expr>  <C-K>   HUDG_GetDigraph()
 
 " Eyecandy
 
@@ -82,7 +82,7 @@ Plug 'fenetikm/falcon'
 Plug 'nightsense/carbonized'
 Plug 'arcticicestudio/nord-vim'
 " Plug 'vim-scripts/wombat'
-" Plug 'cocopon/iceberg.vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
 Plug 'Luxed/ayu-vim'
 
@@ -105,7 +105,7 @@ set termguicolors
 " Colorscheme One
 " colorscheme gruvbox
 set background=dark 		" must come after colorscheme!
-colorscheme nord
+colorscheme one
 
 let g:one_allow_italics = 1
 highlight Comment cterm=italic
@@ -472,7 +472,7 @@ nnoremap <Leader>* :Ggrep --untracked <cword><CR><CR>
 
 " Lightline configuration
 let g:lightline = {
-		\ 'colorscheme': 'nord',
+		\ 'colorscheme': 'one',
 		\ 'active': {
 		\ 	'left': [ 	[ 'mode', 'paste' ],
 		\ 				['gitbranch', 'readonly', 'filename', 'modified' ]	],
