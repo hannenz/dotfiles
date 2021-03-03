@@ -491,4 +491,3 @@ function! LightlineFilename()
     return path[len(root)+1:]
   endif
   return expand('%')
-endfunction
