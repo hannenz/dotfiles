@@ -21,25 +21,36 @@ Plug 'arrufat/vala.vim', {'for': ['vala']}
 Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
 Plug 'mhinz/vim-signify'
-Plug 'rhysd/git-messenger.vim' 		" git message history for given line
+Plug 'rhysd/git-messenger.vim' 	" git message history for given line
+
 Plug 'tpope/vim-obsession' 		" Sessions
+
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
-Plug 'tpope/vim-vinegar'
+
+" Plug 'tpope/vim-vinegar' 		" netrc enhancement (do I really need it??)
+
 Plug 'tpope/vim-abolish' 		" Coerce cases (e.g. transform snake_case to camelCase etc; the plugin has other functions too)
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo'
+
+Plug 'junegunn/vim-peekaboo' 	" Preview for registers when pasting
+
 Plug 'xolox/vim-misc'
-Plug 'sirver/ultisnips'
+
+Plug 'sirver/ultisnips' 		" Snippets
 Plug 'honza/vim-snippets'
+
 Plug 'andymass/vim-matchup'
 Plug 'joonty/vdebug'
 Plug 'vim-scripts/CSSMinister'
@@ -48,10 +59,10 @@ Plug 'h3xx/vim-expand-region'
 Plug 'qpkorr/vim-bufkill'
 let g:BufKillCreateMappings = 0
 
-Plug 'ajh17/vimcompletesme'
-Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
+" Plug 'ajh17/vimcompletesme'
+" Plug 'ervandew/supertab' 		" Supertab allows use of tab for both autocomletion and snippets exapansion
 Plug 'tomtom/tcomment_vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-scripts/html_FileCompletion'
 
@@ -299,6 +310,11 @@ let g:netrw_banner = 0			" Disable banner of netrw
 let g:netrw_liststyle = 3 		" Tree view
 let g:netrw_winsize = -40 		" Window size
 
+" netrw vinegar enhancements:
+" Hide dotfiles (toggle with gh)
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
+
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
 set diffopt=filler,vertical
@@ -492,3 +508,11 @@ function! LightlineFilename()
   endif
   return expand('%')
 endfunction
+
+
+
+" Highlight specific lines, a trick from 
+" https://vimtricks.com/p/highlight-specific-lines/
+highlight LineHighlight ctermbg=yellow guibg=yellow
+nnoremap <silent> <Leader>l :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
+nnoremap <silent> <Leader>c :call clearmatches()<CR>
