@@ -336,3 +336,10 @@ fi
 export CDPATH=".:~/Sites"
 
 export PATH="$HOME/.symfony/bin:$PATH"
+
+
+# From: https://dev.to/vvidovic/viewing-more-with-less-color-syntax-hhp
+# less syntax highlighting + source-highlight installation
+# Needs `apt install source-highlighting`
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R'
