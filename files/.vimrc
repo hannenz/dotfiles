@@ -22,6 +22,7 @@ Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'posva/vim-vue'
 
 " Plugins
 Plug 'tpope/vim-fugitive' 		" git
@@ -516,3 +517,7 @@ endfunction
 highlight LineHighlight ctermbg=yellow guibg=yellow
 nnoremap <silent> <Leader>l :call matchadd('LineHighlight', '\%'.line('.').'l')<CR>
 nnoremap <silent> <Leader>c :call clearmatches()<CR>
+
+
+autocmd BufNewFile *.vue 0r ~/skeletons/component.vue
+autocmd BufNewFile *.html 0r ~/skeletons/index.html

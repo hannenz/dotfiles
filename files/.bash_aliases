@@ -6,6 +6,7 @@ ls --color=auto &>/dev/null && alias ls='ls --color=auto'
 
 alias ll='ls -l'
 alias la='ls -lart'
+alias tree='tree -CF'
 alias cd..='cd ..'
 alias grep='grep --color=auto'
 alias watch='watch --interval=1'
@@ -45,6 +46,7 @@ alias ssh='TERM=screen ssh'
 alias composer='/usr/bin/composer.phar'
 which bat > /dev/null && alias cat=bat 
 # alias vim='nvim'
+alias rm='echo "This is not the command you are looking for - use trash!"; false'
 
 todofile=${HOME}/Nextcloud/todo.md
 if [ ! -e $todofile ] ; then
