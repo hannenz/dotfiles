@@ -195,6 +195,9 @@ endif
 
 set mouse=a 	" ok, sometimes, it's just useful...
 
+" Don't add a newline at end of file (PHP!!)
+set nofixendofline
+
 " Faster Schift+O, see https://github.com/vim/vim/issues/24
 set timeout timeoutlen=5000 ttimeoutlen=100
 
@@ -285,7 +288,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " nnoremap <Leader>f :GFiles<CR>
 " nnoremap <Leader>l :Lines<CR>
 " nnoremap <silent> <C-p> :GFiles<CR>
-nnoremap <silent> <C-P> :Files<CR>
+nnoremap <silent> <C-P> :GFiles<CR>
 " List buffer and ready to select
 nnoremap <Leader>b :Buffer<CR>
 
@@ -482,8 +485,6 @@ augroup vala-meson
 augroup END
 
 
-
-" Increment / Decrement more intuitive
 nnoremap + <C-a>
 nnoremap - <C-x>
 vnoremap + g<C-a>

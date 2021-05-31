@@ -1,1 +1,1 @@
-set ssl:verify-certificate 0
+set ssl:verify-certificate false
