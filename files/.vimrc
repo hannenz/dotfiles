@@ -38,6 +38,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-capslock' 		" Use <C-l> to toggle software capslock mode
 Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+
 " Plug 'tpope/vim-vinegar' 		" netrc enhancement (do I really need it??)
 
 Plug 'tpope/vim-abolish' 		" Coerce cases (e.g. transform snake_case to camelCase etc; the plugin has other functions too)
@@ -274,7 +277,8 @@ nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>a
 
 nnoremap <Leader>g :Gstatus<CR>
-nnoremap <Leader>e :Lexplore<CR>
+" nnoremap <Leader>e :Lexplore<CR>
+nnoremap <Leader>e :Fern . -drawer -toggle -reveal=.<CR>
 nnoremap <leader>m :!make<CR>
 nnoremap <Leader>l :ls<CR>
 " Reload a current browser-sync'ed tab
