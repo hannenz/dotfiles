@@ -40,6 +40,7 @@ Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
 " Plug 'tpope/vim-vinegar' 		" netrc enhancement (do I really need it??)
 
@@ -278,7 +279,6 @@ imap <C-s> <Esc>:w<CR>a
 
 nnoremap <Leader>g :Gstatus<CR>
 " nnoremap <Leader>e :Lexplore<CR>
-nnoremap <Leader>e :Fern . -drawer -toggle -reveal=.<CR>
 nnoremap <leader>m :!make<CR>
 nnoremap <Leader>l :ls<CR>
 " Reload a current browser-sync'ed tab
@@ -526,3 +526,24 @@ nnoremap <silent> <Leader>c :call clearmatches()<CR>
 
 autocmd BufNewFile *.vue 0r ~/skeletons/component.vue
 autocmd BufNewFile *.html 0r ~/skeletons/index.html
+
+" Fern (file tree) configuration
+nnoremap <Leader>e :Fern . -drawer -toggle<CR>
+function! s:init_fern() abort
+	nmap <buffer> H <Plug>(fern-action-open:split)
+	nmap <buffer> V <Plug>(fern-action-open:vsplit)
+	nmap <buffer> R <Plug>(fern-action-rename)
+	nmap <buffer> M <Plug>(fern-action-move)
+	nmap <buffer> C <Plug>(fern-action-copy)
+	nmap <buffer> N <Plug>(fern-action-new-path)
+	nmap <buffer> D <Plug>(fern-action-new-dir)
+	nmap <buffer> S <Plug>(fern-action-hidden-toggle)
+	nmap <buffer> dd <Plug>(fern-action-trash)
+	nmap <buffer> <leader> <Plug>(fern-action-mark)
+endfunction
+
+augroup fern-custom
+	autocmd! *
+	autocmd FileType fern call s:init_fern()
+augroup END
+
