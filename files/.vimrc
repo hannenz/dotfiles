@@ -123,7 +123,6 @@ Plug 'arcticicestudio/nord-vim'
 " Plug 'vim-scripts/wombat'
 Plug 'cocopon/iceberg.vim'
 Plug 'morhetz/gruvbox'
-Plug 'Luxed/ayu-vim'
 
 " Disabled
 " Plug 'psliwka/vim-smoothie'
