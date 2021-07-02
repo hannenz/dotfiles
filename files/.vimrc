@@ -22,6 +22,7 @@ Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'liuchengxu/vista.vim'
 Plug 'posva/vim-vue'
 
 " Plugins
@@ -83,7 +84,16 @@ nmap ++ vip++
 " Plug 'atweiden/vim-hudigraphs'
 " inoremap <expr>  <C-K>   HUDG_GetDigraph()
 
-" Eyecandy
+
+" Vista
+function NearestMethodOrFunction() abort
+	return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+set statusline+=%{NearestMethodOrFunction()}
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+let g:vista_default_executive = 'coc'
+nnoremap <Leader>t :Vista finder<CR>
+nnoremap <Leader>T :Vista!!<CR>
 
 Plug 'itchyny/lightline.vim'
 " Lightline configuration
@@ -91,11 +101,12 @@ let g:lightline = {
 		\ 'colorscheme': 'ThemerVimLightline',
 		\ 'active': {
 		\ 	'left': [ 	[ 'mode', 'paste' ],
-		\ 				['gitbranch', 'readonly', 'filename', 'modified' ]	],
+		\ 				['gitbranch', 'readonly', 'filename', 'modified', 'method' ]	],
 		\ 	},
 		\ 	'component_function': {
 		\ 		'gitbranch': 'FugitiveHead',
-		\ 		'filename': 'LightlineFilename'
+		\ 		'filename': 'LightlineFilename',
+		\ 		'method': 'NearestMethodOrFunction'
 		\ 	}
 		\}
 
@@ -302,10 +313,10 @@ nnoremap <Leader>b :Buffer<CR>
 nnoremap <Leader>u yyp^v$r-
 
 " Tagbar
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_left = 1
-let g:tagbar_autofocus = 1
-let g:tagbar_compact = 1
+" nmap <F8> :TagbarToggle<CR>
+" let g:tagbar_left = 1
+" let g:tagbar_autofocus = 1
+" let g:tagbar_compact = 1
 
 " vim-unimpaired handles this with ]l, [l already!!
 " nnoremap <Leader>a :ALENext<CR>
@@ -546,4 +557,5 @@ augroup fern-custom
 	autocmd! *
 	autocmd FileType fern call s:init_fern()
 augroup END
+
 
