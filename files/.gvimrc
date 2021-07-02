@@ -12,3 +12,5 @@ set lines=60 columns=200
 set guioptions-=T 	" Hide toolbar
 set guioptions-=m 	" Hide menubar
 set guioptions-=r 	" Hide scrollbar
+
+set guifont=Iosevka\ Term\ 10

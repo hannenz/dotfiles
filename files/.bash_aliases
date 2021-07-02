@@ -47,6 +47,8 @@ alias composer='/usr/bin/composer.phar'
 which bat > /dev/null && alias cat=bat 
 # alias vim='nvim'
 alias rm='echo "This is not the command you are looking for - use trash!"; false'
+# Enable cheating (and fullscreen) in supertux
+alias supertux2='supertux2 --developer --fullscreen'
 
 todofile=${HOME}/Nextcloud/todo.md
 if [ ! -e $todofile ] ; then
