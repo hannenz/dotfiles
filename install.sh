@@ -25,12 +25,19 @@ find ${DOTFILES_DIR} -type f  | while read file ; do
         # cp -L --> dereference in case of a symbolic link
         # copy the link target to a regular file
         cp -L "${DESTFILE}" "${BACKUP_DIR}/${DIR}/"
-        rm "${DESTFILE}" # Optionally, seems a bit "cleaner"
+        \rm "${DESTFILE}" # Optionally, seems a bit "cleaner"
     fi
     
     echo "Installing file: ${DESTFILE}"
     ln -sf "${file}" "${DESTFILE}"
 done
 
-which tic > /dev/null && tic ~/tmux-256color
-which gsettings > /dev/null && gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
+command -v tic > /dev/null && tic ~/tmux-256color
+command -v gsettings > /dev/null && gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
+
+# Themer
+command -v npm > /dev/null && { 
+	npm install
+	npm run build
+	find themer-one/wallpaper-* -type f -iname '*.png' -exec cp "{}" $HOME/.local/share/backgrounds/ \;
+}

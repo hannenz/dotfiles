@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@themer/colors-default": "^1.0.11",
+    "@themer/colors-one": "^1.0.9",
+    "@themer/iterm": "^2.1.1",
+    "@themer/vim": "^3.3.1",
+    "@themer/vim-lightline": "^3.1.2",
+    "@themer/wallpaper-block-wave": "^4.0.3",
+    "@themer/wallpaper-burst": "^2.0.2",
+    "@themer/wallpaper-diamonds": "^2.0.2",
+    "@themer/wallpaper-dot-grid": "^1.0.1",
+    "@themer/wallpaper-octagon": "^4.0.2",
+    "@themer/wallpaper-triangles": "^3.0.2",
+    "@themer/wallpaper-trianglify": "^2.0.2",
+    "themer": "^3.3.8",
+    "themer-tmux": "^1.0.4"
+  },
+  "scripts": {
+    "build": "node node_modules/themer/bin/themer.js -c @themer/colors-one -t @themer/vim -t @themer/wallpaper-block-wave -t @themer/wallpaper-burst -t @themer/wallpaper-diamonds -t @themer/wallpaper-octagon -t @themer/wallpaper-dot-grid -t @themer/wallpaper-triangles -t @themer/wallpaper-trianglify -o themer-one"
+  }
+}

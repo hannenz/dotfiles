@@ -43,12 +43,13 @@ alias cheat='cht.sh'
 alias hplayer='mplayer -volume 100 -idle -cache-min 7 http://hannenz.homelinux.org:8000/mpd'
 alias ncmpc='ncmpc --colors -h hannenz.homelinux.org'
 alias ssh='TERM=screen ssh'
-alias composer='/usr/bin/composer.phar'
+# alias composer='/usr/local/bin/composer.phar'
 which bat > /dev/null && alias cat=bat 
 # alias vim='nvim'
 alias rm='echo "This is not the command you are looking for - use trash!"; false'
 # Enable cheating (and fullscreen) in supertux
 alias supertux2='supertux2 --developer --fullscreen'
+alias wttr='curl -H "Accept-Language: de" wttr.in/Oepfingen'
 
 todofile=${HOME}/Nextcloud/todo.md
 if [ ! -e $todofile ] ; then

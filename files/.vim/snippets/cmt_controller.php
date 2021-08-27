@@ -1,1 +1,0 @@
-/home/hannenz/dotfiles/files/.vim/snippets/cmt_controller.php
