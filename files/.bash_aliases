@@ -42,9 +42,15 @@ alias less='less -r'
 alias cheat='cht.sh'
 alias hplayer='mplayer -volume 100 -idle -cache-min 7 http://hannenz.homelinux.org:8000/mpd'
 alias ncmpc='ncmpc --colors -h hannenz.homelinux.org'
-alias ssh='TERM=screen ssh'
+username=$(whoami)
+case "${username}" in
+	jbraun) 		ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;
+	johannesbraun) 	ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;
+	*) 				ssh='TERM=screen ssh -F /home/hannenz/.ssh/config' ;;
+esac
+
 # alias composer='/usr/local/bin/composer.phar'
-which bat > /dev/null && alias cat=bat 
+command -v bat > /dev/null && alias cat=bat 
 # alias vim='nvim'
 alias rm='echo "This is not the command you are looking for - use trash!"; false'
 # Enable cheating (and fullscreen) in supertux
