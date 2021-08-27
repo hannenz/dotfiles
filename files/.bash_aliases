@@ -44,9 +44,9 @@ alias hplayer='mplayer -volume 100 -idle -cache-min 7 http://hannenz.homelinux.o
 alias ncmpc='ncmpc --colors -h hannenz.homelinux.org'
 username=$(whoami)
 case "${username}" in
-	jbraun) 		ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;
-	johannesbraun) 	ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;
-	*) 				ssh='TERM=screen ssh -F /home/hannenz/.ssh/config' ;;
+	jbraun) 		alias ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;
+	johannesbraun) 	alias ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;
+	*) 				alias ssh='TERM=screen ssh -F /home/hannenz/.ssh/config' ;;
 esac
 
 # alias composer='/usr/local/bin/composer.phar'
