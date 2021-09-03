@@ -66,3 +66,20 @@ alias todo='tmux rename-window todo && vim $todofile'
 function ts () {
 	tmux send-keys -t 3 "$*" C-m
 }
+
+function zoom_join {
+	case "${1}" in
+		job|jobs)
+			confno=402205043
+			;;
+		web)
+			confno=629697406
+			;;
+		yoga)
+			confno=629697406
+			;;
+	esac
+	
+	command -v xdg-open > /dev/null && xdg-open "zoommtg://zoom.us/join?confno=$confno"
+	command -v open > /dev/null && open "zoommtg://zoom.us/join?confno=$confno"
+}
