@@ -7,6 +7,9 @@
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# Increase key speed via a rate change
+# From Luke Smith's https://www.youtube.com/watch?v=d8XtNXutVto
+xset r rate 300 50
 
 ##########
 #  PATH  #
