@@ -19,8 +19,13 @@ alias clipsum='lipsum | tee /dev/tty | xclip'
 alias isodate='date +%F-%H%M'
 alias pgrep='pgrep -a'
 # alias mysql='mycli -u root -ppebble --auto-vertical-output'
-alias mysql='mycli -u root -ppebble'
-alias mysqldump='mysqldump -u root'
+if [[ $HOSTNAME == 't470' ]] ; then
+	alias mysql='mycli -u admin -ppebble'
+	alias mysqldump='mysqldump -u admin'
+else 
+	alias mysql='mycli -u root -ppebble'
+	alias mysqldump='mysqldump -u root'
+fi
 alias news='newsboat'
 alias gco='git checkout'
 alias glg='git lg'

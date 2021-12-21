@@ -130,7 +130,7 @@ function mksqldump () {
         return
     fi
     dumpfile=/tmp/$1.$(hostname).$(date +%F-%H%M%S).sql.gz
-    mysqldump -u root -ppebble $1 | gzip > "${dumpfile}"
+    mysqldump -u admin -ppebble $1 | gzip > "${dumpfile}"
     echo "Dump has been written to ${dumpfile}"
 	if [ $# -eq 2 ] ; then
 		thunderbird --compose "to=$2,subject=SQL-Dump `basename ${dumpfile}`,attachment=${dumpfile},format=text"
@@ -267,9 +267,10 @@ export HISTCONTROL=ignoreboth:erasedups
 #  Execute late!  #
 ###################
 
-if [ -e ~/liquidprompt/liquidprompt ] ; then
-	. ~/liquidprompt/liquidprompt
-fi
+# 2021-12-01: Liquidprompt now installed via apt-get
+# if [ -e ~/liquidprompt/liquidprompt ] ; then
+# 	. ~/liquidprompt/liquidprompt
+# fi
 
 
 export MYSQL_PWD=pebble
@@ -344,8 +345,12 @@ export PATH="$HOME/.symfony/bin:$PATH"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R -X -F'
 
+[[ -e /home/jbraun/.config/broot/launcher/bash/br ]] && source /home/jbraun/.config/broot/launcher/bash/br
+
+
+# Only load liquidprompt in interactive shells, not from a script or from scp
+echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source /home/jbraun/.config/broot/launcher/bash/br
