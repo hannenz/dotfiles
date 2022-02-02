@@ -339,16 +339,12 @@ fi
 
 export CDPATH=".:~/Sites"
 
-export PATH="$HOME/.symfony/bin:$PATH"
-
 
 # From: https://dev.to/vvidovic/viewing-more-with-less-color-syntax-hhp
 # less syntax highlighting + source-highlight installation
-# Needs `apt install source-highlighting`
+# Needs `apt install source-highlight`
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R -X -F'
-
-[[ -e /home/jbraun/.config/broot/launcher/bash/br ]] && source /home/jbraun/.config/broot/launcher/bash/br
 
 
 # Only load liquidprompt in interactive shells, not from a script or from scp
