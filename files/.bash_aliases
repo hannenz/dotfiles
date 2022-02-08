@@ -47,6 +47,7 @@ alias less='less -r'
 alias cheat='cht.sh'
 alias hplayer='mplayer -volume 100 -idle -cache-min 7 http://hannenz.homelinux.org:8000/mpd'
 alias ncmpc='ncmpc --colors -h hannenz.homelinux.org'
+alias diff='diff --color -u'
 username=$(whoami)
 case "${username}" in
 	jbraun) 		alias ssh='TERM=screen ssh -F /home/jbraun/.ssh/config.halma' ;;

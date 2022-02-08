@@ -287,12 +287,9 @@ imap kj <Esc>
 nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>a
 
-nnoremap <Leader>g :Gstatus<CR>
+nnoremap <Leader>g :Git<CR>
 " nnoremap <Leader>e :Lexplore<CR>
 nnoremap <leader>m :!make<CR>
-nnoremap <Leader>l :ls<CR>
-" Reload a current browser-sync'ed tab
-nnoremap <Leader>r :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
 
 " fzf settings
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
@@ -498,6 +495,11 @@ augroup vala-meson
 	autocmd!
 	autocmd FileType vala nnoremap <Leader>c :!cd build; ninja<CR>
 	autocmd FileType vala nnoremap <Leader>x :!./run.sh<CR><CR>
+augroup END
+
+augroup php
+	autocmd!
+	autocmd FileType php nnoremap <Leader>x :!php -l %<CR>
 augroup END
 
 
