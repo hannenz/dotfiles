@@ -332,10 +332,10 @@ command_not_found_handle () {
 
 # Start tmux (@see https://unix.stackexchange.com/a/113768, https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login)
 # Makes sure, that tmux exists, does not try to execute itself
-if command -v tmux >/dev/null; then
-	[[ $- != *i* ]] && return 		# Check for shell being interactive
-	[[ -z "$TMUX" ]] && ( tmux attach-session -t tmux_base || tmux new-session -s tmux_base )
-fi
+# if command -v tmux >/dev/null; then
+# 	[[ $- != *i* ]] && return 		# Check for shell being interactive
+# 	[[ -z "$TMUX" ]] && ( tmux attach-session -t tmux_base || tmux new-session -s tmux_base )
+# fi
 
 export CDPATH=".:~/Sites"
 
