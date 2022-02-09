@@ -89,3 +89,7 @@ function zoom_join {
 	command -v xdg-open > /dev/null && xdg-open "zoommtg://zoom.us/join?confno=$confno"
 	command -v open > /dev/null && open "zoommtg://zoom.us/join?confno=$confno"
 }
+
+function git-diff-in-vim {
+	vim -p $(git diff "$1" --name-only) -c "tabdo Gdiff $1"
+}

@@ -94,6 +94,7 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_default_executive = 'coc'
 nnoremap <Leader>t :Vista finder<CR>
 nnoremap <Leader>T :Vista!!<CR>
+set tabpagemax=100
 
 Plug 'itchyny/lightline.vim'
 " Lightline configuration
@@ -335,6 +336,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
 set diffopt=filler,vertical
+set diffopt-=internal
 
 iabbrev </ </<C-X><C-O>
 
