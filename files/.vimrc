@@ -21,7 +21,7 @@ Plug 'arrufat/vala.vim', {'for': ['vala']}
 Plug 'maxbane/vim-asm_ca65'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'posva/vim-vue'
 
@@ -132,6 +132,8 @@ Plug 'morhetz/gruvbox'
 " Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 call plug#end()
 
+" Coc extensions to install
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-clangd', 'coc-phpls', 'coc-tsserver', 'coc-rls', 'coc-html', 'coc-sh']
 
 filetype plugin indent on 	" filetype detection[ON] plugin[ON] indent[OFF]
 syntax enable 				" enable syntax highlighting (previously syntax on).
@@ -562,5 +564,3 @@ augroup fern-custom
 	autocmd! *
 	autocmd FileType fern call s:init_fern()
 augroup END
-
-
