@@ -145,7 +145,13 @@ set termguicolors
 
 " Colorscheme One
 " colorscheme gruvbox
+
+
 set background=dark 		" must come after colorscheme!
+let darkstyle=system('gsettings get io.elementary.terminal.settings prefer-dark-style')
+if trim(darkstyle) == 'false'
+	set background=light
+endif	
 colorscheme one
 
 let g:one_allow_italics = 1
