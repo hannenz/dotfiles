@@ -127,7 +127,7 @@ Plug 'morhetz/gruvbox'
 
 " Disabled
 " Plug 'psliwka/vim-smoothie'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Plug 'vim-php/tagbar-phpctags.vim' Not maintained anymore 2020-11-02
 " Plug 'dbeniamine/cheat.sh-vim' 		" <Leader>KK to search for an answer to the question under the cursor
 call plug#end()
@@ -314,10 +314,11 @@ nnoremap <Leader>b :Buffer<CR>
 nnoremap <Leader>u yyp^v$r-
 
 " Tagbar
-" nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 " let g:tagbar_left = 1
-" let g:tagbar_autofocus = 1
-" let g:tagbar_compact = 1
+let g:tagbar_position = 'botright vertical'
+let g:tagbar_autofocus = 1
+let g:tagbar_compact = 1
 
 " vim-unimpaired handles this with ]l, [l already!!
 " nnoremap <Leader>a :ALENext<CR>
@@ -547,6 +548,8 @@ autocmd BufNewFile *.html 0r ~/skeletons/index.html
 
 " Fern (file tree) configuration
 nnoremap <Leader>e :Fern . -drawer -toggle<CR>
+let g:fern#hide_cursor = 1
+let g:fern#drawer_width = 42
 function! s:init_fern() abort
 	nmap <buffer> H <Plug>(fern-action-open:split)
 	nmap <buffer> V <Plug>(fern-action-open:vsplit)
