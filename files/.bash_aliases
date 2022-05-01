@@ -4,6 +4,7 @@ shopt -s expand_aliases
 export CLICOLOR=1 # Colored output for ls on mac osx
 ls --color=auto &>/dev/null && alias ls='ls --color=auto'
 
+alias v=vim
 alias ll='ls -l'
 alias la='ls -lart'
 alias tree='tree -CF'

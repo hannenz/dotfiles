@@ -42,6 +42,7 @@ Plug 'tpope/vim-eunuch' 		" Move, Cfind, Clocate …
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'vimwiki/vimwiki'
 
 " Plug 'tpope/vim-vinegar' 		" netrc enhancement (do I really need it??)
 
@@ -573,3 +574,5 @@ augroup fern-custom
 	autocmd! *
 	autocmd FileType fern call s:init_fern()
 augroup END
+
+let g:vimwiki_list = [{'path': '~/Nextcloud/vimwiki/', 'path_html': '~/Nextcloud/vimwiki_html'}]
