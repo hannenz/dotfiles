@@ -346,7 +346,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set errorformat^=%f:%l.%c-%[%^:]%#:\ warning:\ %m
 
 set diffopt=filler,vertical
-set diffopt-=internal
+set diffopt+=internal
 
 iabbrev </ </<C-X><C-O>
 
@@ -575,4 +575,4 @@ augroup fern-custom
 	autocmd FileType fern call s:init_fern()
 augroup END
 
-let g:vimwiki_list = [{'path': '~/Nextcloud/vimwiki/', 'path_html': '~/Nextcloud/vimwiki_html'}]
+let g:vimwiki_list = [{'path': '~/Nextcloud/vimwiki/', 'path_html': '~/Nextcloud/vimwiki_html/'}]
