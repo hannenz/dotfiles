@@ -2,9 +2,11 @@ shopt -s expand_aliases
 
 
 export CLICOLOR=1 # Colored output for ls on mac osx
-ls --color=auto &>/dev/null && alias ls='ls --color=auto'
+ls --color=auto &>/dev/null && alias ls='ls -hN --color=auto --group-directories-first'
 
-alias v=vim
+alias v='vim'
+alias cp='cp -iv'
+alias mv='mv -iv'
 alias ll='ls -l'
 alias la='ls -lart'
 alias tree='tree -CF'
@@ -27,6 +29,7 @@ else
 	alias mysql='mycli -u root -ppebble'
 	alias mysqldump='mysqldump -u root'
 fi
+alias g='git'
 alias news='newsboat'
 alias gco='git checkout'
 alias glg='git lg'
