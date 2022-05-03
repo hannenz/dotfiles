@@ -14,7 +14,7 @@ theme.wallpaper = "/home/hannenz/Bilder/Block Wave Wallpaper/themer-wallpaper-bl
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Iosevka Term 11"
+theme.font      = "Iosevka Term 9"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"

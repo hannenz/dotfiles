@@ -7,6 +7,7 @@ ls --color=auto &>/dev/null && alias ls='ls -hN --color=auto --group-directories
 alias v='vim'
 alias cp='cp -iv'
 alias mv='mv -iv'
+alias l='ls -l'
 alias ll='ls -l'
 alias la='ls -lart'
 alias tree='tree -CF'
@@ -30,6 +31,7 @@ else
 	alias mysqldump='mysqldump -u root'
 fi
 alias g='git'
+alias gp='gulp'
 alias news='newsboat'
 alias gco='git checkout'
 alias glg='git lg'
