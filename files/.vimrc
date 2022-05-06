@@ -576,3 +576,4 @@ augroup fern-custom
 augroup END
 
 let g:vimwiki_list = [{'path': '~/Nextcloud/vimwiki/', 'path_html': '~/Nextcloud/vimwiki_html/'}]
+nnoremap <F3> :!curl -Lks https://localhost:3000/__browser_sync__?method=reload<CR><CR>
