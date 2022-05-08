@@ -8,11 +8,10 @@ sxhkd &	 		# Keybindings
 polybar &		# Run Polybar
 compton & 		# Add transparency
 
-nitrogen --set-tiled /home/hannenz/emmas_cats_1920x1080.jpg
+feh --bg-tile ${HOME}/dotfiles/themer-one/wallpaper-octagon/themer-wallpaper-octagon-dark-2880x1800.png
 
-# bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor -d DVI-D-1 I II III IV
-bspc monitor -d DVI-I-1 -d V VI VII VIII IX X
+bspc monitor DVI-D-1 -d 1 2 3 4 5
+# bspc monitor DVI-I-1 -d 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap          12
