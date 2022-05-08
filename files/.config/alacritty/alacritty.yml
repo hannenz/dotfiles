@@ -80,7 +80,7 @@ decorations: none
   # Allow terminal applications to change Alacritty's window title.
 window:
   dynamic_title: true
-  opacity: 1.0
+  opacity: 0.92
 
   # Window class (Linux/BSD only):
   #class:
