@@ -11,12 +11,6 @@
 # From Luke Smith's https://www.youtube.com/watch?v=d8XtNXutVto
 xset r rate 300 50
 
-# Set keyboard layout to US
-/usr/bin/setxkbmap us,us -variant altgr-intl
-
-# Swap CAPS LOCK with Right_Ctl and swap mousewheel direction (natural scroll)
-/usr/bin/xmodmap /home/hannenz/.Xmodmap
-
 ##########
 #  PATH  #
 ##########
