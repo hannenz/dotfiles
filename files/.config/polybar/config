@@ -48,7 +48,8 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = monospace;2
+; font-0 = monospace;2
+font-0 = Iosevka Term
 
 modules-left = xworkspaces xwindow
 modules-right = kdeconnect filesystem pulseaudio xkeyboard memory cpu wlan eth date
@@ -88,6 +89,13 @@ label-empty-padding = 1
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:60:...%
+
+
+[module/kdeconnect]
+type = custom/script
+exec = "/home/jbraun/polybar-kdeconnect/polybar-kdeconnect.sh -d"
+tail = true
+
 
 [module/filesystem]
 type = internal/fs

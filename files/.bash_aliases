@@ -4,6 +4,8 @@ shopt -s expand_aliases
 export CLICOLOR=1 # Colored output for ls on mac osx
 ls --color=auto &>/dev/null && alias ls='ls -hN --color=auto --group-directories-first'
 
+
+
 alias v='vim'
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -99,4 +101,10 @@ function zoom_join {
 
 function git-diff-in-vim {
 	vim -p $(git diff "$1" --name-only) -c "tabdo Gdiff $1"
+}
+
+
+function qr {
+	tempfile=$(tempfile)
+	qrencode -s 12 -o ${tempfile}  "${1}" && xdg-open ${tempfile}
 }
