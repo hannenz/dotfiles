@@ -23,7 +23,7 @@ key = "a"
 command = "DecreaseMainWidth"
 value = "1"
 modifier = ["modkey"]
-key = "x"
+key = "z"
 
 [[keybind]]
 command = "IncreaseMainWidth"
@@ -35,7 +35,7 @@ key = "a"
 command = "DecreaseMainWidth"
 value = "5"
 modifier = ["modkey", "Shift"]
-key = "x"
+key = "z"
 
 [[keybind]]
 command = "Execute"
