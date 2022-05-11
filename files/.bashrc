@@ -348,7 +348,9 @@ export LESS=' -R -X -F'
 
 
 # Only load liquidprompt in interactive shells, not from a script or from scp
-echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+# echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+
+eval "$(starship init bash)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
