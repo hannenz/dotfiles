@@ -44,6 +44,9 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'vimwiki/vimwiki'
 
+Plug 'ptzz/lf.vim' 				" lf file manager integration
+Plug 'voldikss/vim-floaterm'	" Dependency for lf file manager
+
 " Plug 'tpope/vim-vinegar' 		" netrc enhancement (do I really need it??)
 
 Plug 'tpope/vim-abolish' 		" Coerce cases (e.g. transform snake_case to camelCase etc; the plugin has other functions too)
